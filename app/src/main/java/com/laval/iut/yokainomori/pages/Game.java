@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.laval.iut.yokainomori.R;
+import com.laval.iut.yokainomori.core.Jeu;
+import com.laval.iut.yokainomori.core.Jeu34;
 
 /**
  * Created by lione on 10/12/2016.
@@ -20,16 +22,22 @@ public class Game extends Page {
 
     private ViewGroup root;
 
-    private final int lines = 4;
-    private final int rows = 3;
+    private Jeu jeu;
+
+    private int lines = 4;
+    private int rows = 3;
     private ImageView[][] boardPawns;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = (ViewGroup) inflater.inflate(R.layout.fragment_game, null);
 
+        jeu = new Jeu34();
 
         final LinearLayout board = (LinearLayout) root.findViewById(R.id.board);
+
+        lines = jeu.getPlateau().getHauteur();
+        rows = jeu.getPlateau().getLargeur();
 
         boardPawns = new ImageView[lines][rows];
 
@@ -46,6 +54,7 @@ public class Game extends Page {
                 caseBoard.setLayoutParams(params);
                 tempLinearLayout.addView(caseBoard);
                 boardPawns[i][j] = caseBoard;
+                System.out.println("koukou "+jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[0][0]));
                 final int iFinal = i;
                 final int jFinal = j;
 
@@ -57,8 +66,6 @@ public class Game extends Page {
                             View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
                             v.startDrag(data, shadowBuilder, v, 0);
                             removePawn(iFinal, jFinal);
-                            //System.out.println("koukou touch "+iFinal+" : "+jFinal);
-                            //v.setVisibility(View.INVISIBLE);
                             return true;
                         } else {
                             return false;
@@ -71,22 +78,16 @@ public class Game extends Page {
                     public boolean onDrag(View v, DragEvent event) {
                         switch(event.getAction()) {
                             case DragEvent.ACTION_DRAG_STARTED:
-                                //System.out.println("koukou start");
                                 break;
                             case DragEvent.ACTION_DRAG_ENTERED:
-                                //System.out.println("koukou enter");
                                 break;
                             case DragEvent.ACTION_DRAG_EXITED :
-                                //System.out.println("koukou exit");
                                 break;
                             case DragEvent.ACTION_DRAG_LOCATION:
-                                //System.out.println("koukou location");
                                 break;
                             case DragEvent.ACTION_DRAG_ENDED:
-                                //System.out.println("koukou ended");
                                 break;
                             case DragEvent.ACTION_DROP:
-                                //System.out.println("koukou drop "+iFinal+" : "+jFinal);
                                 setPawn(iFinal, jFinal);
                                 break;
                             default:
