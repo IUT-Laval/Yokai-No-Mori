@@ -13,13 +13,18 @@ public abstract class Jeu {
 	private boolean termine = false;
 	private Joueur vainqueur = null;
 	private Plateau plateau;
+	List<Deplacement> deplacementsJ1 = new ArrayList<Deplacement>();
+	List<Deplacement> deplacementsJ2 = new ArrayList<Deplacement>();
 
 	public Jeu() {
 		initialiserJeu();
+		deplacementsJ1.add(Deplacement.AVANT);
+		deplacementsJ2.add(Deplacement.ARRIERE);
+
 	}
 
 	/**
-	 * 
+	 *
 	 * @param pion
 	 *            Pion du joueur
 	 * @param arrive
@@ -35,21 +40,32 @@ public abstract class Jeu {
 			gestionnaireJoueur.joueurSuivant();
 			return true;
 		}
-		
+
 		if (gestionnairePion.getKey(pion) == null)
 			return false;
-		// controle si l'arriv�e n'est pas le d�part
+
+		// controle si l'arrivée n'est pas le départ
 		if (gestionnairePion.getKey(pion).equals(arrive))
 			return false;
-		
-		//si le plateau est un 5*6 et le pion s�lectionn� est un kodama										
-		if(plateau.getLargeur() == 4 && plateau.getHauteur() == 5 && pion.getNom() == "Kodama"){
-			//on parcours toutes les cases de la colonne de la case d'arriv�e
-			for (int i = 0; i <= 5; i++) {
-				//si une des cases contient un kodama on annule le d�placement
-				if(gestionnairePion.get(new Case(arrive.getX(),i)).getNom() == "Kodama"){
-					System.out.println("Impossible d'avoir deux kodama de votre �quipe sur la m�me colonne");
-					return false;	
+
+		//si le plateau est un 5*6 et le pion sélectionné est un kodama
+		if(plateau.getLargeur() == 5 && plateau.getHauteur() == 6 )
+
+			if (pion.getDeplacements().equals(deplacementsJ1) ){
+				for (int i = 0; i <= 6; i++) {
+					//si une des cases contient un kodama on annule le déplacement
+					if(gestionnaireJoueur.getJoueurActuel().equals(0) && gestionnairePion.get(new Case(arrive.getX(),i)).getDeplacements().equals(deplacementsJ1)){
+						System.out.println("Impossible d'avoir deux kodama de votre équipe sur la même colonne");
+						return false;
+					}
+				}
+			}
+		if (pion.getDeplacements().equals(deplacementsJ2) ){
+			for (int i = 0; i <= 6; i++) {
+				//si une des cases contient un kodama on annule le déplacement
+				if(gestionnaireJoueur.getJoueurActuel().equals(0) && gestionnairePion.get(new Case(arrive.getX(),i)).getDeplacements().equals(deplacementsJ2)){
+					System.out.println("Impossible d'avoir deux kodama de votre équipe sur la même colonne");
+					return false;
 				}
 			}
 		}
@@ -59,7 +75,7 @@ public abstract class Jeu {
 		if (gestionnairePion.get(arrive) != null)
 			if (gestionnaireJoueur.getJoueurActuel().getPions().contains(gestionnairePion.get(arrive)))
 				return false;
-		// controle si le d�placement est valide pour ce pion
+		// controle si le déplacement est valide pour ce pion
 		int x = gestionnairePion.getKey(pion).getX() - arrive.getX();
 		int y = gestionnairePion.getKey(pion).getY() - arrive.getY();
 		for (Deplacement deplacement : pion.getDeplacements()) {
@@ -68,17 +84,17 @@ public abstract class Jeu {
 				if (gestionnairePion.get(arrive) != null) {
 					capturer(gestionnairePion.get(arrive));
 				}
-				// d�placer le pion
+				// déplacer le pion
 				deplacer(pion, arrive);
 				gestionnairePion.put(arrive, pion);
-				// promotion si le pion qui a bouger est �voluable et rentre
+				// promotion si le pion qui a bouger est évoluable et rentre
 				// dans la zone
 				//si il peut pas bouger ensuite, promotion obligatoire, sinon demande promotion
 				if (gestionnaireJoueur.getJoueurActuel().getZonePromotion().contains(arrive)
 						&& pion instanceof PionEvoluable) {
 					if (testMouvement(pion, arrive)){
-					PionEvoluable pionE = (PionEvoluable) pion;
-					pionE.evoluer();
+						PionEvoluable pionE = (PionEvoluable) pion;
+						pionE.evoluer();
 					}
 					//demande evolution
 					else{
@@ -94,6 +110,7 @@ public abstract class Jeu {
 		}
 		return false;
 	}
+
 
 	// TODO : affichage d'un message dans l'iu => besoin de l'acces au
 	// controller ou view
