@@ -89,14 +89,14 @@ public class Jeu34 extends Jeu {
 		Pion pionKoropokkuru1 = new Pion("Kor1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
 		Pion pionKitsune1 = new Pion("Kit1", R.drawable.kitsune, new ArrayList<Deplacement>(deplacementKitsune));
 		Pion pionTanuki1 = new Pion("Tan1", R.drawable.tanuki, new ArrayList<Deplacement>(deplacementTanuki));
-		Pion pionKodamaSamurai1 = new Pion("KoS1", R.drawable.kodamasamurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+		Pion pionKodamaSamurai1 = new Pion("KoS1", R.drawable.kodama_samurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
 		PionEvoluable pionKodama1 = new PionEvoluable("Kod1", R.drawable.kodama, new ArrayList<Deplacement>(deplacementKodama),
 				pionKodamaSamurai1);
 
 		Pion pionKoropokkuru2 = new Pion("Kor2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
 		Pion pionKitsune2 = new Pion("Kit2", R.drawable.kitsune, new ArrayList<Deplacement>(deplacementKitsune));
 		Pion pionTanuki2 = new Pion("Tan2", R.drawable.tanuki, new ArrayList<Deplacement>(deplacementTanuki));
-		Pion pionKodamaSamurai2 = new Pion("KoS2", R.drawable.kodamasamurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+		Pion pionKodamaSamurai2 = new Pion("KoS2", R.drawable.kodama_samurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
 		PionEvoluable pionKodama2 = new PionEvoluable("Kod2", R.drawable.kodama, new ArrayList<Deplacement>(deplacementKodama),
 				pionKodamaSamurai2);
 
