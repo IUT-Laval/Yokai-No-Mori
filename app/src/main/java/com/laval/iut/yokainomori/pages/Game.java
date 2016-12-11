@@ -51,6 +51,8 @@ public class Game extends Page {
 
         jeu = new Jeu34();
 
+        final LinearLayout winPanel = (LinearLayout) root.findViewById(R.id.winPanel);
+
         jeu.addJeuListeners(new JeuListener() {
             @Override
             public void init() {
@@ -72,8 +74,10 @@ public class Game extends Page {
             }
 
             @Override
-            public void finPartie(Joueur gagnant) {
-                System.out.println("koukou FIN DE LA PARTIE");
+            public void finPartie(int gagnant) {
+                winPanel.setVisibility(View.VISIBLE);
+                if (gagnant == 1)
+                    winPanel.setRotation(180);
             }
         });
 
@@ -195,6 +199,24 @@ public class Game extends Page {
         }
 
         setCurrentPlayer(jeu.getGestionnaireJoueur().getJoueurActuel().getNom());
+
+
+        final LinearLayout pausePanel = (LinearLayout) root.findViewById(R.id.pausePanel);
+        ImageView pause1 = (ImageView) root.findViewById(R.id.pause1);
+        ImageView pause2 = (ImageView) root.findViewById(R.id.pause2);
+        pause1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pausePanel.setRotation(180);
+                pausePanel.setVisibility(View.VISIBLE);
+            }
+        });
+        pause2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pausePanel.setVisibility(View.VISIBLE);
+            }
+        });
 
         return root;
     }

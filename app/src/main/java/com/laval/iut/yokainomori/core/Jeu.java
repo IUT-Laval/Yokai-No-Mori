@@ -114,7 +114,7 @@ public abstract class Jeu {
 			termine = true;
 			vainqueur = gestionnaireJoueur.getJoueurActuel();
             for (JeuListener l : jeuListener) {
-                l.finPartie(vainqueur);
+                l.finPartie(gestionnaireJoueur.getIndexJoueurActuel());
             }
 		} else {
 			gestionnaireJoueur.getJoueurAdverse().getPions().remove(pion);

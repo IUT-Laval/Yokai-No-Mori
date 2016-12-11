@@ -6,4 +6,6 @@
 
     <color name="active">#2ecc71</color>
     <color name="inactive">#ecf0f1</color>
+
+    <color name="win">#9b59b6</color>
 </resources>

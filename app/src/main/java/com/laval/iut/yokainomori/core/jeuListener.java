@@ -12,6 +12,6 @@ public interface JeuListener {
 
     public void capturePion(Pion pion, String nomJoueur);
 
-    public void finPartie(Joueur gagnant);
+    public void finPartie(int gagnant);
 
 }
