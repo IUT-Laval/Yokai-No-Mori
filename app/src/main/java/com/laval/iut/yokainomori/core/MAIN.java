@@ -46,7 +46,7 @@ public class MAIN {
 	}
 
 	public static boolean testPion() {
-		Pion pion = new Pion(reponsePionString, null, null);
+		Pion pion = new Pion(reponsePionString, 0, null);
 		int index;
 		for (Joueur joueur : jeu.getGestionnaireJoueur().getJoueurs()) {
 			if (joueur.getReserve().contains(pion)) {

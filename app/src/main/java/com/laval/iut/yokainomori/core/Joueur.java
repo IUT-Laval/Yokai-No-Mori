@@ -34,6 +34,10 @@ public class Joueur {
 		this.zonePromotion = zonePromotion;
 	}
 
+	public String getNom() {
+		return nom;
+	}
+
 	@Override
 	public String toString() {
 		return this.nom;

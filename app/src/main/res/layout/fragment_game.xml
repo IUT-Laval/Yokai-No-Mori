@@ -6,17 +6,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <HorizontalScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:background="@android:color/holo_blue_light">
-        <LinearLayout
-            android:layout_width="wrap_content"
+        android:layout_weight="0.09"
+        android:orientation="horizontal"
+        android:background="@drawable/wood_texture">
+        <ImageView
+            android:layout_weight="0.20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:src="@drawable/pause"/>
+        <HorizontalScrollView
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-        </LinearLayout>
-    </HorizontalScrollView>
+            android:layout_weight="0.75">
+            <LinearLayout
+                android:id="@+id/reserve1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+            </LinearLayout>
+        </HorizontalScrollView>
+        <LinearLayout
+            android:id="@+id/active1"
+            android:layout_width="0dp"
+            android:layout_weight="0.05"
+            android:layout_height="match_parent"
+            android:background="@color/inactive"
+            android:orientation="horizontal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.01"
+        android:background="#3498db"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +51,7 @@
         android:gravity="center"
         android:layout_weight="0.8"
         android:orientation="vertical"
-        android:background="@android:color/holo_orange_light">
+        android:background="@drawable/grass_texture">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
@@ -52,16 +79,43 @@
         </LinearLayout>
     </LinearLayout>
 
-    <HorizontalScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:background="@android:color/holo_blue_light">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        android:layout_weight="0.01"
+        android:background="#e74c3c"/>
 
-        </LinearLayout>
-    </HorizontalScrollView>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.09"
+            android:orientation="horizontal"
+            android:background="@drawable/wood_texture">
+        <LinearLayout
+            android:id="@+id/active2"
+            android:layout_weight="0.05"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/inactive"
+            android:orientation="horizontal"/>
+        <HorizontalScrollView
+            android:layout_weight="0.75"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/reserve2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+        </HorizontalScrollView>
+        <ImageView
+            android:layout_weight="0.20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:src="@drawable/pause"/>
+    </LinearLayout>
 </LinearLayout>

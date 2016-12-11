@@ -13,7 +13,7 @@ public class PionEvoluable extends Pion implements Evoluable {
 	private Pion evolution;
 	private boolean isEvolue;
 
-	public PionEvoluable(String nom, String img, List<Deplacement> deplacements, Pion evolution) {
+	public PionEvoluable(String nom, int img, List<Deplacement> deplacements, Pion evolution) {
 		super(nom, img, deplacements);
 		this.evolution = evolution;
 		this.isEvolue = false;
@@ -41,7 +41,7 @@ public class PionEvoluable extends Pion implements Evoluable {
 	}
 
 	@Override
-	public String getImg() {
+	public int getImg() {
 		if (!isEvolue)
 			return super.getImg();
 		else return evolution.getImg();
