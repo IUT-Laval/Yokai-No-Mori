@@ -51,24 +51,17 @@ public abstract class Jeu {
 		//si le plateau est un 5*6 et le pion sélectionné est un kodama
 		if(plateau.getLargeur() == 5 && plateau.getHauteur() == 6 )
 
-			if (pion.getDeplacements().equals(deplacementsJ1) ){
+			if (pion.getDeplacements().equals(deplacementsJ1) || pion.getDeplacements().equals(deplacementsJ2) ){
 				for (int i = 0; i <= 6; i++) {
 					//si une des cases contient un kodama on annule le déplacement
-					if(gestionnaireJoueur.getJoueurActuel().equals(0) && gestionnairePion.get(new Case(arrive.getX(),i)).getDeplacements().equals(deplacementsJ1)){
+					if(gestionnairePion.get(plateau.getCase(arrive.getX(), i)).getDeplacements().equals(deplacementsJ1) ||
+							gestionnairePion.get(plateau.getCase(arrive.getX(), i)).getDeplacements().equals(deplacementsJ2)){
 						System.out.println("Impossible d'avoir deux kodama de votre équipe sur la même colonne");
 						return false;
 					}
 				}
 			}
-		if (pion.getDeplacements().equals(deplacementsJ2) ){
-			for (int i = 0; i <= 6; i++) {
-				//si une des cases contient un kodama on annule le déplacement
-				if(gestionnaireJoueur.getJoueurActuel().equals(0) && gestionnairePion.get(new Case(arrive.getX(),i)).getDeplacements().equals(deplacementsJ2)){
-					System.out.println("Impossible d'avoir deux kodama de votre équipe sur la même colonne");
-					return false;
-				}
-			}
-		}
+
 		// controle si le pion appartient au joueur
 		if (!gestionnaireJoueur.getJoueurActuel().getPions().contains(pion))
 			return false;
