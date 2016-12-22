@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu;
 import com.laval.iut.yokainomori.core.Jeu34;
+import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
 import com.laval.iut.yokainomori.core.JoueurListener;
@@ -38,8 +39,8 @@ public class Game extends Page {
     private Pion selectedPawn;
     private Integer indexSelectedPawn;
 
-    private int lines = 4;
-    private int rows = 3;
+    private int lines;
+    private int rows;
     private ImageView[][] boardPawns;
     private Map<String, LinearLayout> reserveLinearLayouts;
     private Map<String, List<ImageView>> listReserve;
@@ -49,7 +50,9 @@ public class Game extends Page {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = (ViewGroup) inflater.inflate(R.layout.fragment_game, null);
 
-        jeu = new Jeu34();
+        jeu = new Jeu56();
+        lines = jeu.getPlateau().getHauteur();
+        rows = jeu.getPlateau().getLargeur();
 
         final LinearLayout winPanel = (LinearLayout) root.findViewById(R.id.winPanel);
 

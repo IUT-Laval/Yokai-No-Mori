@@ -95,26 +95,6 @@ public class Pion {
 		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
 		return result;
 	}
- // red�finition � effacer, juste pour la console
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof Pion ))
-			return false;
-		Pion other = (Pion) obj;
-		if (getNom() == null) {
-			if (other.getNom() != null)
-				return false;
-		} else if (!getNom().equals(other.getNom()))
-			return false;
-		return true;
-	}
 
-	
-	
-	
 	
 }

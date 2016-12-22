@@ -86,18 +86,18 @@ public class Jeu34 extends Jeu {
 		deplacementKodamaSamurai.add(Deplacement.GAUCHE);
 		deplacementKodamaSamurai.add(Deplacement.ARRIERE);
 
-		Pion pionKoropokkuru1 = new Pion("Kor1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
-		Pion pionKitsune1 = new Pion("Kit1", R.drawable.kitsune, new ArrayList<Deplacement>(deplacementKitsune));
-		Pion pionTanuki1 = new Pion("Tan1", R.drawable.tanuki, new ArrayList<Deplacement>(deplacementTanuki));
-		Pion pionKodamaSamurai1 = new Pion("KoS1", R.drawable.kodama_samurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
-		PionEvoluable pionKodama1 = new PionEvoluable("Kod1", R.drawable.kodama, new ArrayList<Deplacement>(deplacementKodama),
+		Pion pionKoropokkuru1 = new Pion("koroppokuru", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
+		Pion pionKitsune1 = new Pion("kitsune", R.drawable.kitsune, new ArrayList<Deplacement>(deplacementKitsune));
+		Pion pionTanuki1 = new Pion("tanuki", R.drawable.tanuki, new ArrayList<Deplacement>(deplacementTanuki));
+		Pion pionKodamaSamurai1 = new Pion("kodama_samurai", R.drawable.kodama_samurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+		PionEvoluable pionKodama1 = new PionEvoluable("kodama", R.drawable.kodama, new ArrayList<Deplacement>(deplacementKodama),
 				pionKodamaSamurai1);
 
-		Pion pionKoropokkuru2 = new Pion("Kor2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
-		Pion pionKitsune2 = new Pion("Kit2", R.drawable.kitsune, new ArrayList<Deplacement>(deplacementKitsune));
-		Pion pionTanuki2 = new Pion("Tan2", R.drawable.tanuki, new ArrayList<Deplacement>(deplacementTanuki));
-		Pion pionKodamaSamurai2 = new Pion("KoS2", R.drawable.kodama_samurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
-		PionEvoluable pionKodama2 = new PionEvoluable("Kod2", R.drawable.kodama, new ArrayList<Deplacement>(deplacementKodama),
+		Pion pionKoropokkuru2 = new Pion("koroppokuru", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
+		Pion pionKitsune2 = new Pion("kitsune", R.drawable.kitsune, new ArrayList<Deplacement>(deplacementKitsune));
+		Pion pionTanuki2 = new Pion("tanuki", R.drawable.tanuki, new ArrayList<Deplacement>(deplacementTanuki));
+		Pion pionKodamaSamurai2 = new Pion("kodama_samurai", R.drawable.kodama_samurai, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+		PionEvoluable pionKodama2 = new PionEvoluable("kodama", R.drawable.kodama, new ArrayList<Deplacement>(deplacementKodama),
 				pionKodamaSamurai2);
 
 		// mise en place des piece importante (d�faite si captur�e ou autre)
@@ -105,14 +105,14 @@ public class Jeu34 extends Jeu {
 		pionKoropokkuru2.setImportant(true);
 
 		getGestionnairePion().put(getPlateau().getCases()[1][0], pionKoropokkuru1); // Koropokkuru
-		getGestionnairePion().put(getPlateau().getCases()[0][0], pionKitsune1); // Kitsune
-		getGestionnairePion().put(getPlateau().getCases()[2][0], pionTanuki1); // Tanuki
-		getGestionnairePion().put(getPlateau().getCases()[1][1], pionKodama1); // Kodama
+		getGestionnairePion().put(getPlateau().getCases()[0][0], pionKitsune1); // kitsune
+		getGestionnairePion().put(getPlateau().getCases()[2][0], pionTanuki1); // tanuki
+		getGestionnairePion().put(getPlateau().getCases()[1][1], pionKodama1); // kodama
 
 		getGestionnairePion().put(getPlateau().getCases()[1][3], pionKoropokkuru2); // Koropokkuru
-		getGestionnairePion().put(getPlateau().getCases()[2][3], pionKitsune2); // Kitsune
-		getGestionnairePion().put(getPlateau().getCases()[0][3], pionTanuki2); // Tanuki
-		getGestionnairePion().put(getPlateau().getCases()[1][2], pionKodama2); // Kodama
+		getGestionnairePion().put(getPlateau().getCases()[2][3], pionKitsune2); // kitsune
+		getGestionnairePion().put(getPlateau().getCases()[0][3], pionTanuki2); // tanuki
+		getGestionnairePion().put(getPlateau().getCases()[1][2], pionKodama2); // kodama
 
 		List<Pion> pionsJ1 = getGestionnaireJoueur().getJoueur(0).getPions();
 		List<Pion> pionsJ2 = getGestionnaireJoueur().getJoueur(1).getPions();
