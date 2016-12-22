@@ -1,5 +1,7 @@
 package com.laval.iut.yokainomori.core;
 
+import com.laval.iut.yokainomori.R;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -12,10 +14,10 @@ public class Pion {
 	
 	private String nom;
 	private List<Deplacement> deplacements = new ArrayList<Deplacement>();
-	private String img = "";
+	private int img = R.drawable.empty;
 	private boolean important = false;
 
-	public Pion(String nom,String img, List<Deplacement> deplacements) {
+	public Pion(String nom, int img, List<Deplacement> deplacements) {
 		this.nom = nom;
 		this.deplacements = deplacements;
 		this.img = img;
@@ -73,10 +75,10 @@ public class Pion {
 	public void setDeplacements(List<Deplacement> deplacements) {
 		this.deplacements = deplacements;
 	}
-	public String getImg() {
+	public int getImg() {
 		return img;
 	}
-	public void setImg(String img) {
+	public void setImg(int img) {
 		this.img = img;
 	}
 	public boolean isImportant() {

@@ -1,5 +1,7 @@
 package com.laval.iut.yokainomori.core;
 
+import com.laval.iut.yokainomori.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,39 +77,39 @@ public class Jeu56 extends Jeu {
 			deplacementKodamaSamurai.add(Deplacement.GAUCHE);
 			deplacementKodamaSamurai.add(Deplacement.ARRIERE);
 
-			Pion pionKoropokkuru1 = new Pion("Kor1", "", new ArrayList<Deplacement>(deplacementKoropokkuru));
-			Pion pionKodamaSamurai1 = new Pion("KoS1", "", new ArrayList<Deplacement>(deplacementKodamaSamurai));
-			PionEvoluable pionKodama1 = new PionEvoluable("Kod1", "", new ArrayList<Deplacement>(deplacementKodama),
+			Pion pionKoropokkuru1 = new Pion("Kor1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
+			Pion pionKodamaSamurai1 = new Pion("KoS1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+			PionEvoluable pionKodama1 = new PionEvoluable("Kod1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodama),
 					pionKodamaSamurai1);
-			Pion pionKodamaSamurai2 = new Pion("KoS2", "", new ArrayList<Deplacement>(deplacementKodamaSamurai));
-			PionEvoluable pionKodama2 = new PionEvoluable("Kod2", "", new ArrayList<Deplacement>(deplacementKodama),
+			Pion pionKodamaSamurai2 = new Pion("KoS2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+			PionEvoluable pionKodama2 = new PionEvoluable("Kod2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodama),
 					pionKodamaSamurai2);
-			Pion pionKodamaSamurai3 = new Pion("KoS3", "", new ArrayList<Deplacement>(deplacementKodamaSamurai));
-			PionEvoluable pionKodama3 = new PionEvoluable("Kod3", "", new ArrayList<Deplacement>(deplacementKodama),
+			Pion pionKodamaSamurai3 = new Pion("KoS3", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+			PionEvoluable pionKodama3 = new PionEvoluable("Kod3", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodama),
 					pionKodamaSamurai3);
-			Pion pionSuperOni1 = new Pion("SOn1", "", new ArrayList<Deplacement>(deplacementSuperOni));
-			PionEvoluable pionOni1 = new PionEvoluable("Oni1", "", new ArrayList<Deplacement>(deplacementOni), pionSuperOni1);
-			Pion pionKirin1 = new Pion("Kir1", "", new ArrayList<Deplacement>(deplacementKirin));
-			Pion pionSuperOni2 = new Pion("SOn2", "", new ArrayList<Deplacement>(deplacementSuperOni));
-			PionEvoluable pionOni2 = new PionEvoluable("Oni2", "", new ArrayList<Deplacement>(deplacementOni), pionSuperOni2);
-			Pion pionKirin2 = new Pion("Kir2", "", new ArrayList<Deplacement>(deplacementKirin));
+			Pion pionSuperOni1 = new Pion("SOn1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementSuperOni));
+			PionEvoluable pionOni1 = new PionEvoluable("Oni1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementOni), pionSuperOni1);
+			Pion pionKirin1 = new Pion("Kir1", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKirin));
+			Pion pionSuperOni2 = new Pion("SOn2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementSuperOni));
+			PionEvoluable pionOni2 = new PionEvoluable("Oni2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementOni), pionSuperOni2);
+			Pion pionKirin2 = new Pion("Kir2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKirin));
 
-			Pion pionKoropokkuru2 = new Pion("Kor2", "", new ArrayList<Deplacement>(deplacementKoropokkuru));
-			Pion pionKodamaSamurai4 = new Pion("KoS4", "", new ArrayList<Deplacement>(deplacementKodamaSamurai));
-			PionEvoluable pionKodama4 = new PionEvoluable("Kod4", "", new ArrayList<Deplacement>(deplacementKodama),
+			Pion pionKoropokkuru2 = new Pion("Kor2", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKoropokkuru));
+			Pion pionKodamaSamurai4 = new Pion("KoS4", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+			PionEvoluable pionKodama4 = new PionEvoluable("Kod4", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodama),
 					pionKodamaSamurai4);
-			Pion pionKodamaSamurai5 = new Pion("KoS5", "", new ArrayList<Deplacement>(deplacementKodamaSamurai));
-			PionEvoluable pionKodama5 = new PionEvoluable("Kod5", "", new ArrayList<Deplacement>(deplacementKodama),
+			Pion pionKodamaSamurai5 = new Pion("KoS5", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+			PionEvoluable pionKodama5 = new PionEvoluable("Kod5", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodama),
 					pionKodamaSamurai5);
-			Pion pionKodamaSamurai6 = new Pion("KoS6", "", new ArrayList<Deplacement>(deplacementKodamaSamurai));
-			PionEvoluable pionKodama6 = new PionEvoluable("Kod6", "", new ArrayList<Deplacement>(deplacementKodama),
+			Pion pionKodamaSamurai6 = new Pion("KoS6", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodamaSamurai));
+			PionEvoluable pionKodama6 = new PionEvoluable("Kod6", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKodama),
 					pionKodamaSamurai6);
-			Pion pionSuperOni3 = new Pion("SOn3", "", new ArrayList<Deplacement>(deplacementSuperOni));
-			PionEvoluable pionOni3 = new PionEvoluable("Oni3", "", new ArrayList<Deplacement>(deplacementOni), pionSuperOni3);
-			Pion pionKirin3 = new Pion("Kir3", "", new ArrayList<Deplacement>(deplacementKirin));
-			Pion pionSuperOni4 = new Pion("SOn4", "", new ArrayList<Deplacement>(deplacementSuperOni));
-			PionEvoluable pionOni4 = new PionEvoluable("Oni4", "", new ArrayList<Deplacement>(deplacementOni), pionSuperOni4);
-			Pion pionKirin4 = new Pion("Kir4", "", new ArrayList<Deplacement>(deplacementKirin));
+			Pion pionSuperOni3 = new Pion("SOn3", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementSuperOni));
+			PionEvoluable pionOni3 = new PionEvoluable("Oni3", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementOni), pionSuperOni3);
+			Pion pionKirin3 = new Pion("Kir3", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKirin));
+			Pion pionSuperOni4 = new Pion("SOn4", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementSuperOni));
+			PionEvoluable pionOni4 = new PionEvoluable("Oni4", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementOni), pionSuperOni4);
+			Pion pionKirin4 = new Pion("Kir4", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementKirin));
 
 			// mise en place des piece importante (d�faite si captur�e ou autre)
 			pionKoropokkuru1.setImportant(true);
@@ -153,6 +155,8 @@ public class Jeu56 extends Jeu {
 			for (Pion pion : pionsJ2) {
 				pion.seRetourner();
 			}
+
+			super.initialiserJeu();
 		}
 
 	}

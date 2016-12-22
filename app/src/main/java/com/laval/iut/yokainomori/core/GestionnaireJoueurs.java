@@ -3,6 +3,7 @@ package com.laval.iut.yokainomori.core;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * G�re 2 joueurs.
  * @author Nicolas
@@ -13,14 +14,26 @@ public class GestionnaireJoueurs {
 	private Joueur[] joueurs = {null,null};
 	private int indexJoueurActuel;
 	private int indexJoueurAdverse;
-	
-	public GestionnaireJoueurs(String nom1,String nom2){
+
+    private List<JoueurListener> joueurListener = new ArrayList<>();
+
+    public void addJoueurListeners(JoueurListener l) {
+        joueurListener.add(l);
+    }
+
+    public GestionnaireJoueurs(String nom1,String nom2){
 		joueurs[0] = new Joueur(nom1);
 		joueurs[1] = new Joueur(nom2);
 	}
 	
 	public Joueur getJoueur(int index) {
 		return joueurs[index];
+	}
+	public Joueur getJoueur(String nom) {
+		for (int i = 0;i<joueurs.length;i++)
+			if (joueurs[i].getNom().equals(nom))
+				return joueurs[i];
+		return null;
 	}
 	public Joueur[] getJoueurs(){
 		return joueurs;
@@ -51,6 +64,9 @@ public class GestionnaireJoueurs {
 	public void joueurSuivant() {
 		indexJoueurAdverse = indexJoueurActuel;
 		indexJoueurActuel = (indexJoueurActuel+1)%2;
+        for (JoueurListener l : joueurListener) {
+            l.changeJoueur(getJoueur(indexJoueurActuel));
+        }
 	}
 	/**
 	 * 

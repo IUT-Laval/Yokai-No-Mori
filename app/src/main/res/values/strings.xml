@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YokaiNoMori</string>
+    <string name="win">Vous avez gagné !</string>
+    <string name="pause">pause</string>
 </resources>

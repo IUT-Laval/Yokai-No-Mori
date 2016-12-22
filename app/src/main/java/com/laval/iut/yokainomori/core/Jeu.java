@@ -1,10 +1,10 @@
 package com.laval.iut.yokainomori.core;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.collections4.BidiMap;
 import org.apache.commons.collections4.bidimap.DualHashBidiMap;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Jeu {
 
@@ -13,6 +13,13 @@ public abstract class Jeu {
 	private boolean termine = false;
 	private Joueur vainqueur = null;
 	private Plateau plateau;
+
+	private List<JeuListener> jeuListener = new ArrayList<>();
+
+    public void addJeuListeners(JeuListener l) {
+        jeuListener.add(l);
+    }
+
 
 	public Jeu() {
 		initialiserJeu();
@@ -88,10 +95,13 @@ public abstract class Jeu {
 
 	public void deplacer(Pion pion, Case arrive) {
 		gestionnairePion.put(arrive, pion);
+        for (JeuListener l : jeuListener) {
+            l.deplacePion(pion);
+        }
 	}
 
 	public void parachuter(Pion pion, Case arrive) {
-		gestionnairePion.put(arrive, pion);
+        deplacer(pion, arrive);
 	}
 
 	public boolean testParachutage(Pion pion, Case arrive) {
@@ -103,6 +113,9 @@ public abstract class Jeu {
 		if (pion.isImportant()) {
 			termine = true;
 			vainqueur = gestionnaireJoueur.getJoueurActuel();
+            for (JeuListener l : jeuListener) {
+                l.finPartie(gestionnaireJoueur.getIndexJoueurActuel());
+            }
 		} else {
 			gestionnaireJoueur.getJoueurAdverse().getPions().remove(pion);
 			gestionnaireJoueur.getJoueurActuel().getReserve().add(pion);
@@ -110,6 +123,9 @@ public abstract class Jeu {
 			if (pion instanceof PionEvoluable)
 				((PionEvoluable) pion).desevoluer();
 		}
+        for (JeuListener l : jeuListener) {
+            l.capturePion(pion, gestionnaireJoueur.getJoueurActuel().getNom());
+        }
 	}
 	public boolean testMouvement(Pion pion, Case arrive) {
 		for(Deplacement deplacement : pion.getDeplacements()){
@@ -159,6 +175,14 @@ public abstract class Jeu {
 	 * Initialise les joueurs, le plateau avec ses cases et les pions.
 	 */
 	// ici les pion des pions evoluable ne devrai pas etre referencer pour pas de double pr�sence
-	public abstract void initialiserJeu();
+	public void initialiserJeu() {
+        for (JeuListener l : jeuListener) {
+            l.init();
+        }
+    }
+
+    public boolean isRetourne(Pion pion) {
+        return (gestionnaireJoueur.getJoueur(1).getReserve().contains(pion) || gestionnaireJoueur.getJoueur(1).getPions().contains(pion));
+    }
 
 }
