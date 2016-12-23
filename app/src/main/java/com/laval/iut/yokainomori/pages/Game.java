@@ -2,9 +2,14 @@ package com.laval.iut.yokainomori.pages;
 
 import android.content.ClipData;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.util.ArrayMap;
+import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -202,25 +207,22 @@ public class Game extends Page {
         }
 
         setCurrentPlayer(jeu.getGestionnaireJoueur().getJoueurActuel().getNom());
-
-
-        final LinearLayout pausePanel = (LinearLayout) root.findViewById(R.id.pausePanel);
-        ImageView pause1 = (ImageView) root.findViewById(R.id.pause1);
-        ImageView pause2 = (ImageView) root.findViewById(R.id.pause2);
-        pause1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pausePanel.setRotation(180);
-                pausePanel.setVisibility(View.VISIBLE);
-            }
-        });
-        pause2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pausePanel.setVisibility(View.VISIBLE);
-            }
-        });
-
+        // menu pause
+        final DrawerLayout drawerLayout = (DrawerLayout) root.findViewById(R.id.drawer_layout);
+        NavigationView navigationView = (NavigationView) root.findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        switch(menuItem.getItemId()){
+                            case R.id.quitter :
+                                changePage(PageName.HOME);
+                                return true;
+                        }
+                        drawerLayout.closeDrawers();
+                        return true;
+                    }
+                });
         return root;
     }
 

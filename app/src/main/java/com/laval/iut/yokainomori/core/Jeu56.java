@@ -32,10 +32,14 @@ public class Jeu56 extends Jeu {
 			getGestionnaireJoueur().initJoueurActuel();
 
 			setPlateau(new Plateau(5, 6));
-			Case cases[][] = getPlateau().getCases();
+			Case[][] cases = getPlateau().getCases();
 			for (int i = 0; i < 5; i++) {
 				getGestionnaireJoueur().getJoueur(0).getZonePromotion().add(cases[i][5]);
-				getGestionnaireJoueur().getJoueur(0).getZonePromotion().add(cases[1][4]);
+				getGestionnaireJoueur().getJoueur(0).getZonePromotion().add(cases[i][4]);
+			}
+			for (int i = 0; i < 5; i++) {
+				getGestionnaireJoueur().getJoueur(1).getZonePromotion().add(cases[i][0]);
+				getGestionnaireJoueur().getJoueur(1).getZonePromotion().add(cases[i][1]);
 			}
 
 			List<Deplacement> deplacementKoropokkuru, deplacementKirin, deplacementOni, deplacementSuperOni,
