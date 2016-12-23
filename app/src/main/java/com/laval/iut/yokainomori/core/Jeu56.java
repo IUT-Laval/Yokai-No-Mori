@@ -15,7 +15,8 @@ public class Jeu56 extends Jeu {
             if (pion.getNom().equals("kodama")) {
                 for (int i = 0; i < getPlateau().getHauteur(); i++) {
                     if (getGestionnairePion().get(getPlateau().getCases()[arrive.getX()][i]) != null &&
-                            getGestionnairePion().get(getPlateau().getCases()[arrive.getX()][i]).getNom().equals("kodama"))
+                            getGestionnairePion().get(getPlateau().getCases()[arrive.getX()][i]).getNom().equals("kodama")
+                            && getGestionnaireJoueur().getJoueurActuel().getPions().contains(getGestionnairePion().get(getPlateau().getCases()[arrive.getX()][i])))
                         return false;
                 }
             }
