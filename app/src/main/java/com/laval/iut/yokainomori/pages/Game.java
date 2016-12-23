@@ -1,6 +1,7 @@
 package com.laval.iut.yokainomori.pages;
 
 import android.content.ClipData;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -107,13 +108,11 @@ public class Game extends Page {
         reserveLinearLayouts.put(jeu.getGestionnaireJoueur().getJoueur(0).getNom(), (LinearLayout) root.findViewById(R.id.reserve2));
         reserveLinearLayouts.put(jeu.getGestionnaireJoueur().getJoueur(1).getNom(), (LinearLayout) root.findViewById(R.id.reserve1));
 
-        listReserve = new ArrayMap<>();
-        listReserve.put(jeu.getGestionnaireJoueur().getJoueur(0).getNom(), new ArrayList());
-        listReserve.put(jeu.getGestionnaireJoueur().getJoueur(1).getNom(), new ArrayList());
 
-        currentPlayer = new ArrayMap<>();
-        currentPlayer.put(jeu.getGestionnaireJoueur().getJoueur(0).getNom(), (LinearLayout) root.findViewById(R.id.active2));
-        currentPlayer.put(jeu.getGestionnaireJoueur().getJoueur(1).getNom(), (LinearLayout) root.findViewById(R.id.active1));
+        listReserve = new ArrayMap<>();
+        listReserve.put(jeu.getGestionnaireJoueur().getJoueur(0).getNom(), new ArrayList<ImageView>());
+        listReserve.put(jeu.getGestionnaireJoueur().getJoueur(1).getNom(), new ArrayList<ImageView>());
+
 
         for (int i = lines-1;i>=0;i--) {
             LinearLayout tempLinearLayout = new LinearLayout(root.getContext());
@@ -142,12 +141,14 @@ public class Game extends Page {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            ClipData data = ClipData.newPlainText("", "");
-                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
-                            v.startDrag(data, shadowBuilder, v, 0);
-                            //selectedX = jFinal;
-                            //selectedY = iFinal;
-                            selectedPawn = jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[jFinal][iFinal]);
+                            if(jeu.getGestionnaireJoueur().getJoueurActuel().getPions().contains(jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[jFinal][iFinal]))) {
+                                ClipData data = ClipData.newPlainText("", "");
+                                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+                                v.startDrag(data, shadowBuilder, v, 0);
+                                //selectedX = jFinal;
+                                //selectedY = iFinal;
+                                selectedPawn = jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[jFinal][iFinal]);
+                            }
                             return true;
                         } else {
                             return false;
@@ -244,15 +245,12 @@ public class Game extends Page {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    Joueur j = jeu.getGestionnaireJoueur().getJoueur(nomJoueur);
-                    if (j != null) {
-                        if (listReserve.get(nomJoueur).indexOf(caseBoard) >= 0 && listReserve.get(nomJoueur).indexOf(caseBoard) < j.getReserve().size()) {
-                            ClipData data = ClipData.newPlainText("", "");
-                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
-                            v.startDrag(data, shadowBuilder, v, 0);
-                            selectedPawn = j.getReserve().get(listReserve.get(nomJoueur).indexOf(caseBoard));
-                            indexSelectedPawn = listReserve.get(nomJoueur).indexOf(caseBoard);
-                        }
+                   if(jeu.getGestionnaireJoueur().getJoueurActuel().getReserve().contains(jeu.getGestionnaireJoueur().getJoueur(nomJoueur).getReserve().get(listReserve.get(nomJoueur).indexOf(caseBoard)))) {
+                        ClipData data = ClipData.newPlainText("", "");
+                        View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+                        v.startDrag(data, shadowBuilder, v, 0);
+                        selectedPawn = jeu.getGestionnaireJoueur().getJoueur(nomJoueur).getReserve().get(listReserve.get(nomJoueur).indexOf(caseBoard));
+                        indexSelectedPawn = listReserve.get(nomJoueur).indexOf(caseBoard);
                     }
                     return true;
                 } else {
@@ -278,12 +276,26 @@ public class Game extends Page {
         reserveLinearLayouts.get(nomJoueur).removeView(listReserve.get(nomJoueur).get(index));
         listReserve.get(nomJoueur).remove(index);
     }
-
+    // change l'aspect des pieces lors d'un changement de joueur
     public void setCurrentPlayer(String nomJoueur) {
-        for(Map.Entry<String, LinearLayout> entry : currentPlayer.entrySet()) {
-            entry.getValue().setBackgroundColor(getResources().getColor(R.color.inactive));
+        for(ImageView img : listReserve.get(jeu.getGestionnaireJoueur().getJoueurActuel().getNom())){
+            img.clearColorFilter();
         }
-        currentPlayer.get(nomJoueur).setBackgroundColor(getResources().getColor(R.color.active));
+        for(ImageView img : listReserve.get(jeu.getGestionnaireJoueur().getJoueurAdverse().getNom())){
+            img.setColorFilter(Color.parseColor("#B2333333"));
+        }
+        for(Pion pion : jeu.getGestionnaireJoueur().getJoueurActuel().getPions()){
+            Log.d("pion",pion.toString());
+            Log.d("case",jeu.getGestionnairePion().getKey(pion).toString());
+            int x = jeu.getGestionnairePion().getKey(pion).getX();
+            int y = jeu.getGestionnairePion().getKey(pion).getY();
+            boardPawns[x][y].clearColorFilter();
+        }
+        for(Pion pion : jeu.getGestionnaireJoueur().getJoueurAdverse().getPions()){
+            int x = jeu.getGestionnairePion().getKey(pion).getX();
+            int y = jeu.getGestionnairePion().getKey(pion).getY();
+            boardPawns[x][y].setColorFilter(Color.parseColor("#B2333333"));
+        }
     }
 
 }
