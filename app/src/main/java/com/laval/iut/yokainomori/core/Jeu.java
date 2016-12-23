@@ -116,13 +116,12 @@ public abstract class Jeu {
             for (JeuListener l : jeuListener) {
                 l.finPartie(gestionnaireJoueur.getIndexJoueurActuel());
             }
-		} else {
-			gestionnaireJoueur.getJoueurAdverse().getPions().remove(pion);
-			gestionnaireJoueur.getJoueurActuel().getReserve().add(pion);
-			pion.seRetourner();
-			if (pion instanceof PionEvoluable)
-				((PionEvoluable) pion).desevoluer();
 		}
+		gestionnaireJoueur.getJoueurAdverse().getPions().remove(pion);
+		gestionnaireJoueur.getJoueurActuel().getReserve().add(pion);
+		pion.seRetourner();
+		if (pion instanceof PionEvoluable)
+				((PionEvoluable) pion).desevoluer();
         for (JeuListener l : jeuListener) {
             l.capturePion(pion, gestionnaireJoueur.getJoueurActuel().getNom());
         }
