@@ -32,13 +32,6 @@
                         android:orientation="horizontal">
                     </LinearLayout>
                 </HorizontalScrollView>
-                <LinearLayout
-                    android:id="@+id/active1"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.05"
-                    android:layout_height="match_parent"
-                    android:background="@color/inactive"
-                    android:orientation="horizontal"/>
             </LinearLayout>
 
             <LinearLayout
@@ -93,13 +86,6 @@
                 android:layout_weight="0.09"
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
-                <LinearLayout
-                    android:id="@+id/active2"
-                    android:layout_weight="0.05"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/inactive"
-                    android:orientation="horizontal"/>
                 <HorizontalScrollView
                     android:layout_weight="0.75"
                     android:layout_width="0dp"
