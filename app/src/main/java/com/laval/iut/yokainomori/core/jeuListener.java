@@ -14,4 +14,8 @@ public interface JeuListener {
 
     public void finPartie(int gagnant);
 
+    public void demandeEvolutionPion(Pion pion);
+
+    public void evoluePion(Pion pion);
+
 }

@@ -10,7 +10,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/grass_texture">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -18,7 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.09"
+                android:layout_weight="0.08"
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
                 <HorizontalScrollView
@@ -33,6 +34,10 @@
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bord_bas_texture"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -46,28 +51,37 @@
                 android:gravity="center"
                 android:layout_weight="0.8"
                 android:orientation="vertical"
-                android:background="@drawable/grass_texture">
+                >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:background="@android:color/holo_green_dark">
                 </LinearLayout>
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_haut_texture"/>
 
                 <LinearLayout
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:paddingTop="10px"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:orientation="vertical"
                     android:background="@drawable/wood_texture"
-                    android:id="@+id/board">
+                    android:id="@+id/board"
+                    android:layout_weight="1">
 
                 </LinearLayout>
-
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_bas_texture"/>
                 <LinearLayout
-                    android:layout_marginTop="-20dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:background="@android:color/holo_green_dark">
@@ -79,11 +93,14 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.01"
                 android:background="#e74c3c"/>
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bord_haut_texture"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.09"
+                android:layout_weight="0.08"
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
                 <HorizontalScrollView

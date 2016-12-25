@@ -1,10 +1,11 @@
 package com.laval.iut.yokainomori.pages;
 
+import android.app.AlertDialog;
 import android.content.ClipData;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
@@ -25,6 +26,7 @@ import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
 import com.laval.iut.yokainomori.core.JoueurListener;
 import com.laval.iut.yokainomori.core.Pion;
+import com.laval.iut.yokainomori.core.PionEvoluable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +42,6 @@ public class Game extends Page {
 
     private Jeu jeu;
 
-    private int selectedX = 0;
-    private int selectedY = 0;
     private Pion selectedPawn;
     private Integer indexSelectedPawn;
 
@@ -88,6 +88,15 @@ public class Game extends Page {
                 if (gagnant == 1)
                     winPanel.setRotation(180);
             }
+            @Override
+            public void demandeEvolutionPion(Pion pion) {
+                displayDialogEvolution(pion);
+            }
+            @Override
+            public void evoluePion(Pion pion){
+                changeViewPion(pion);
+            }
+
         });
 
         jeu.getGestionnaireJoueur().addJoueurListeners(new JoueurListener() {
@@ -297,5 +306,36 @@ public class Game extends Page {
             boardPawns[x][y].setColorFilter(Color.parseColor("#B2333333"));
         }
     }
-
+    public void displayDialogEvolution(final Pion pion){
+        new AlertDialog.Builder(root.getContext())
+                .setView(getActivity().getLayoutInflater().inflate(R.layout.dialog_evolution,null))
+                .setTitle(R.string.dialog_evolution_title)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        PionEvoluable pionE = (PionEvoluable) pion;
+                        pionE.evoluer();
+                        changeViewPion(pion);
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setNeutralButton(R.string.see_the_game, new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which) {
+                        // à modif voir feuille
+                        dialog.dismiss();
+                    }
+                })
+                .setIcon(R.drawable.level_up)
+                .setCancelable(false)
+                .show();
+    }
+    public void changeViewPion(Pion pion){
+        int x = jeu.getGestionnairePion().getKey(pion).getX();
+        int y = jeu.getGestionnairePion().getKey(pion).getY();
+        boardPawns[x][y].setImageResource(pion.getImg());
+    }
 }

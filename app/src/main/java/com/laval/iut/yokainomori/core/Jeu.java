@@ -62,23 +62,28 @@ public abstract class Jeu {
 				if (gestionnairePion.get(arrive) != null) {
 					capturer(gestionnairePion.get(arrive));
 				}
+
+				// origine pour verifier la sortie d'une zone
+				Case origine = getGestionnairePion().getKey(pion);
 				// d�placer le pion
 				deplacer(pion, arrive);
 				gestionnairePion.put(arrive, pion);
 				// promotion si le pion qui a bouger est �voluable et rentre
-				// dans la zone
+				// dans la zone, ou en sort
 				//si il peut pas bouger ensuite, promotion obligatoire, sinon demande promotion
-				if (gestionnaireJoueur.getJoueurActuel().getZonePromotion().contains(arrive)
-						&& pion instanceof PionEvoluable) {
-					if (testMouvement(pion, arrive)){
-					PionEvoluable pionE = (PionEvoluable) pion;
-					pionE.evoluer();
+				if ((gestionnaireJoueur.getJoueurActuel().getZonePromotion().contains(arrive) || gestionnaireJoueur.getJoueurActuel().getZonePromotion().contains(origine))
+						&& pion instanceof PionEvoluable && ((PionEvoluable) pion).isEvolue()==false) {
+					if (!testMouvement(pion, arrive)){
+						PionEvoluable pionE = (PionEvoluable) pion;
+						pionE.evoluer();
+						for (JeuListener l : jeuListener) {
+							l.evoluePion(pion);
+						}
 					}
 					//demande evolution
 					else{
-						if(demandeEvlution()==true){
-							PionEvoluable pionE = (PionEvoluable) pion;
-							pionE.evoluer();
+						for (JeuListener l : jeuListener) {
+							l.demandeEvolutionPion(pion);
 						}
 					}
 				}
@@ -87,10 +92,6 @@ public abstract class Jeu {
 			}
 		}
 		return false;
-	}
-//TODO : affichage d'un message dans l'iu => besoin de l'acces au controller ou view
-	private boolean demandeEvlution() {
-		return true;
 	}
 
 	public void deplacer(Pion pion, Case arrive) {

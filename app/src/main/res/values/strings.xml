@@ -2,4 +2,10 @@
     <string name="app_name">YokaiNoMori</string>
     <string name="win">Vous avez gagné !</string>
     <string name="pause">pause</string>
+    <string name="dialog_evolution_title">Promotion</string>
+    <string name="dialog_evolution_message">La pièce que vous venez de déplacer peut être promue !</string>
+    <string name="dialog_evolution_question">Voulez-vous la promouvoir ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="see_the_game">Voir le jeu</string>
 </resources>
