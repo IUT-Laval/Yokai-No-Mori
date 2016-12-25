@@ -119,7 +119,7 @@ public class Jeu56 extends Jeu {
 			PionEvoluable pionKodama6 = new PionEvoluable("kodama", R.drawable.kodama, new ArrayList<Deplacement>(deplacementKodama),
 					pionKodamaSamurai6);
 			Pion pionSuperOni3 = new Pion("super_oni", R.drawable.super_oni, new ArrayList<Deplacement>(deplacementSuperOni));
-			PionEvoluable pionOni3 = new PionEvoluable("oni", R.drawable.koroppokuru, new ArrayList<Deplacement>(deplacementOni), pionSuperOni3);
+			PionEvoluable pionOni3 = new PionEvoluable("oni", R.drawable.oni, new ArrayList<Deplacement>(deplacementOni), pionSuperOni3);
 			Pion pionKirin3 = new Pion("kirin", R.drawable.kirin, new ArrayList<Deplacement>(deplacementKirin));
 			Pion pionSuperOni4 = new Pion("super_oni", R.drawable.super_oni, new ArrayList<Deplacement>(deplacementSuperOni));
 			PionEvoluable pionOni4 = new PionEvoluable("oni", R.drawable.oni, new ArrayList<Deplacement>(deplacementOni), pionSuperOni4);

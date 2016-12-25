@@ -47,8 +47,13 @@ public class PionEvoluable extends Pion implements Evoluable {
 		else return evolution.getImg();
 	}
 
+	public Pion getEvolution() {
+		return evolution;
+	}
+
 	public void evoluer(){
     	isEvolue = true;
+
     }
     public void desevoluer(){
     	isEvolue = false;

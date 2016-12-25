@@ -73,8 +73,8 @@ public abstract class Jeu {
 				//si il peut pas bouger ensuite, promotion obligatoire, sinon demande promotion
 				if ((gestionnaireJoueur.getJoueurActuel().getZonePromotion().contains(arrive) || gestionnaireJoueur.getJoueurActuel().getZonePromotion().contains(origine))
 						&& pion instanceof PionEvoluable && ((PionEvoluable) pion).isEvolue()==false) {
+					PionEvoluable pionE = (PionEvoluable) pion;
 					if (!testMouvement(pion, arrive)){
-						PionEvoluable pionE = (PionEvoluable) pion;
 						pionE.evoluer();
 						for (JeuListener l : jeuListener) {
 							l.evoluePion(pion);
@@ -83,7 +83,7 @@ public abstract class Jeu {
 					//demande evolution
 					else{
 						for (JeuListener l : jeuListener) {
-							l.demandeEvolutionPion(pion);
+							l.demandeEvolutionPion(pionE);
 						}
 					}
 				}

@@ -89,7 +89,7 @@ public class Game extends Page {
                     winPanel.setRotation(180);
             }
             @Override
-            public void demandeEvolutionPion(Pion pion) {
+            public void demandeEvolutionPion(PionEvoluable pion) {
                 displayDialogEvolution(pion);
             }
             @Override
@@ -306,8 +306,8 @@ public class Game extends Page {
             boardPawns[x][y].setColorFilter(Color.parseColor("#B2333333"));
         }
     }
-    public void displayDialogEvolution(final Pion pion){
-        new AlertDialog.Builder(root.getContext())
+    public void displayDialogEvolution(final PionEvoluable pion){
+        AlertDialog dialog = new AlertDialog.Builder(root.getContext())
                 .setView(getActivity().getLayoutInflater().inflate(R.layout.dialog_evolution,null))
                 .setTitle(R.string.dialog_evolution_title)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
@@ -332,6 +332,12 @@ public class Game extends Page {
                 .setIcon(R.drawable.level_up)
                 .setCancelable(false)
                 .show();
+
+        ImageView imgPawn = (ImageView) dialog.findViewById(R.id.viewPawn);
+        imgPawn.setImageResource(pion.getImg());
+        ImageView imgEvolution = (ImageView) dialog.findViewById(R.id.viewEvolution);
+        imgEvolution.setImageResource(pion.getEvolution().getImg());
+
     }
     public void changeViewPion(Pion pion){
         int x = jeu.getGestionnairePion().getKey(pion).getX();
