@@ -49,11 +49,38 @@ public class Game extends Page {
     private ImageView[][] boardPawns;
     private Map<String, LinearLayout> reserveLinearLayouts;
     private Map<String, List<ImageView>> listReserve;
-    private Map<String, LinearLayout> currentPlayer;
+    //private Map<String, LinearLayout> currentPlayer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = (ViewGroup) inflater.inflate(R.layout.fragment_game, null);
+
+        ImageView gotohome = (ImageView) root.findViewById(R.id.gotohome);
+        ImageView replay = (ImageView) root.findViewById(R.id.replay);
+        gotohome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePage(PageName.HOME);
+            }
+        });
+        replay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                init();
+            }
+        });
+
+        init();
+
+        return root;
+    }
+
+    public void init() {
+
+        ((LinearLayout) root.findViewById(R.id.winPanel)).setVisibility(View.INVISIBLE);
+        ((LinearLayout) root.findViewById(R.id.board)).removeAllViews();
+        ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
+        ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
 
         jeu = new Jeu34();
         lines = jeu.getPlateau().getHauteur();
@@ -69,10 +96,10 @@ public class Game extends Page {
             @Override
             public void deplacePion(Pion pion) {
                 setPawn(
-                    pion.getImg(),
-                    jeu.getGestionnairePion().getKey(pion).getX(),
-                    jeu.getGestionnairePion().getKey(pion).getY(),
-                    jeu.isRetourne(pion)
+                        pion.getImg(),
+                        jeu.getGestionnairePion().getKey(pion).getX(),
+                        jeu.getGestionnairePion().getKey(pion).getY(),
+                        jeu.isRetourne(pion)
                 );
             }
 
@@ -94,7 +121,7 @@ public class Game extends Page {
             }
 
             @Override
-            public void evoluePion(Pion pion){
+            public void evoluePion(Pion pion) {
                 changeViewPion(pion);
             }
 
@@ -124,12 +151,12 @@ public class Game extends Page {
         listReserve.put(jeu.getGestionnaireJoueur().getJoueur(1).getNom(), new ArrayList<ImageView>());
 
 
-        for (int i = lines-1;i>=0;i--) {
+        for (int i = lines - 1; i >= 0; i--) {
             LinearLayout tempLinearLayout = new LinearLayout(root.getContext());
             LinearLayout.LayoutParams paramsTempLinearLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, .2f);
             tempLinearLayout.setLayoutParams(paramsTempLinearLayout);
             tempLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
-            for (int j = 0;j<rows;j++) {
+            for (int j = 0; j < rows; j++) {
                 final ImageView caseBoard = new ImageView(root.getContext());
                 if (jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[j][i]) != null) {
                     caseBoard.setImageResource(jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[j][i]).getImg());
@@ -151,7 +178,7 @@ public class Game extends Page {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            if(jeu.getGestionnaireJoueur().getJoueurActuel().getPions().contains(jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[jFinal][iFinal]))) {
+                            if (jeu.getGestionnaireJoueur().getJoueurActuel().getPions().contains(jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[jFinal][iFinal]))) {
                                 ClipData data = ClipData.newPlainText("", "");
                                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
                                 v.startDrag(data, shadowBuilder, v, 0);
@@ -169,12 +196,12 @@ public class Game extends Page {
                 caseBoard.setOnDragListener(new View.OnDragListener() {
                     @Override
                     public boolean onDrag(View v, DragEvent event) {
-                        switch(event.getAction()) {
+                        switch (event.getAction()) {
                             case DragEvent.ACTION_DRAG_STARTED:
                                 break;
                             case DragEvent.ACTION_DRAG_ENTERED:
                                 break;
-                            case DragEvent.ACTION_DRAG_EXITED :
+                            case DragEvent.ACTION_DRAG_EXITED:
                                 break;
                             case DragEvent.ACTION_DRAG_LOCATION:
                                 break;
@@ -225,8 +252,8 @@ public class Game extends Page {
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        switch(menuItem.getItemId()){
-                            case R.id.quitter :
+                        switch (menuItem.getItemId()) {
+                            case R.id.quitter:
                                 changePage(PageName.HOME);
                                 return true;
                         }
@@ -234,7 +261,6 @@ public class Game extends Page {
                         return true;
                     }
                 });
-        return root;
     }
 
     public void capture(int img, final String nomJoueur, boolean isRetourne) {
@@ -256,7 +282,7 @@ public class Game extends Page {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                   if(jeu.getGestionnaireJoueur().getJoueurActuel().getReserve().contains(jeu.getGestionnaireJoueur().getJoueur(nomJoueur).getReserve().get(listReserve.get(nomJoueur).indexOf(caseBoard)))) {
+                    if (jeu.getGestionnaireJoueur().getJoueurActuel().getReserve().contains(jeu.getGestionnaireJoueur().getJoueur(nomJoueur).getReserve().get(listReserve.get(nomJoueur).indexOf(caseBoard)))) {
                         ClipData data = ClipData.newPlainText("", "");
                         View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
                         v.startDrag(data, shadowBuilder, v, 0);
@@ -290,29 +316,29 @@ public class Game extends Page {
 
     // change l'aspect des pieces lors d'un changement de joueur
     public void setCurrentPlayer(String nomJoueur) {
-        for(ImageView img : listReserve.get(jeu.getGestionnaireJoueur().getJoueurActuel().getNom())){
+        for (ImageView img : listReserve.get(jeu.getGestionnaireJoueur().getJoueurActuel().getNom())) {
             img.clearColorFilter();
         }
-        for(ImageView img : listReserve.get(jeu.getGestionnaireJoueur().getJoueurAdverse().getNom())){
+        for (ImageView img : listReserve.get(jeu.getGestionnaireJoueur().getJoueurAdverse().getNom())) {
             img.setColorFilter(Color.parseColor("#B2333333"));
         }
-        for(Pion pion : jeu.getGestionnaireJoueur().getJoueurActuel().getPions()){
-            Log.d("pion",pion.toString());
-            Log.d("case",jeu.getGestionnairePion().getKey(pion).toString());
+        for (Pion pion : jeu.getGestionnaireJoueur().getJoueurActuel().getPions()) {
+            Log.d("pion", pion.toString());
+            Log.d("case", jeu.getGestionnairePion().getKey(pion).toString());
             int x = jeu.getGestionnairePion().getKey(pion).getX();
             int y = jeu.getGestionnairePion().getKey(pion).getY();
             boardPawns[x][y].clearColorFilter();
         }
-        for(Pion pion : jeu.getGestionnaireJoueur().getJoueurAdverse().getPions()){
+        for (Pion pion : jeu.getGestionnaireJoueur().getJoueurAdverse().getPions()) {
             int x = jeu.getGestionnairePion().getKey(pion).getX();
             int y = jeu.getGestionnairePion().getKey(pion).getY();
             boardPawns[x][y].setColorFilter(Color.parseColor("#B2333333"));
         }
     }
 
-    public void displayDialogEvolution(final PionEvoluable pion){
+    public void displayDialogEvolution(final PionEvoluable pion) {
         AlertDialog dialog = new AlertDialog.Builder(root.getContext())
-                .setView(getActivity().getLayoutInflater().inflate(R.layout.dialog_evolution,null))
+                .setView(getActivity().getLayoutInflater().inflate(R.layout.dialog_evolution, null))
                 .setTitle(R.string.dialog_evolution_title)
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
@@ -327,7 +353,7 @@ public class Game extends Page {
                         dialog.dismiss();
                     }
                 })
-                .setNeutralButton(R.string.see_the_game, new DialogInterface.OnClickListener(){
+                .setNeutralButton(R.string.see_the_game, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // à modif voir feuille
                         dialog.dismiss();
@@ -344,7 +370,7 @@ public class Game extends Page {
 
     }
 
-    public void changeViewPion(Pion pion){
+    public void changeViewPion(Pion pion) {
         int x = jeu.getGestionnairePion().getKey(pion).getX();
         int y = jeu.getGestionnairePion().getKey(pion).getY();
         boardPawns[x][y].setImageResource(pion.getImg());
