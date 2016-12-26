@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <item
-            android:id="@+id/quitter"
-            android:title="Quitter" />
+    <item
+        android:id="@+id/reprendre"
+        android:title="@string/resume" />
+    <item
+        android:id="@+id/options"
+        android:title="@string/options" />
+    <item
+        android:id="@+id/recommencer"
+        android:title="@string/replay" />
+    <item
+        android:id="@+id/quitter"
+        android:title="@string/quit" />
 
 </menu>

@@ -256,6 +256,16 @@ public class Game extends Page {
                             case R.id.quitter:
                                 changePage(PageName.HOME);
                                 return true;
+                            case R.id.recommencer:
+                                init();
+                                drawerLayout.closeDrawers();
+                                return true;
+                            case R.id.reprendre:
+                                drawerLayout.closeDrawers();
+                                return true;
+                            case R.id.options:
+                                //changePage(PageName.);
+                                return true;
                         }
                         drawerLayout.closeDrawers();
                         return true;

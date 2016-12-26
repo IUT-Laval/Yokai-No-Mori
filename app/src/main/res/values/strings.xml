@@ -8,4 +8,8 @@
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="see_the_game">Voir le jeu</string>
+    <string name="quit">Quitter</string>
+    <string name="replay">Recommencer</string>
+    <string name="options">Options</string>
+    <string name="resume">Reprendre</string>
 </resources>
