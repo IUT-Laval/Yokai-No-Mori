@@ -21,7 +21,6 @@ import android.widget.LinearLayout;
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu;
 import com.laval.iut.yokainomori.core.Jeu34;
-import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
 import com.laval.iut.yokainomori.core.JoueurListener;
@@ -56,7 +55,7 @@ public class Game extends Page {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = (ViewGroup) inflater.inflate(R.layout.fragment_game, null);
 
-        jeu = new Jeu56();
+        jeu = new Jeu34();
         lines = jeu.getPlateau().getHauteur();
         rows = jeu.getPlateau().getLargeur();
 
@@ -88,10 +87,12 @@ public class Game extends Page {
                 if (gagnant == 1)
                     winPanel.setRotation(180);
             }
+
             @Override
             public void demandeEvolutionPion(PionEvoluable pion) {
                 displayDialogEvolution(pion);
             }
+
             @Override
             public void evoluePion(Pion pion){
                 changeViewPion(pion);
@@ -244,7 +245,8 @@ public class Game extends Page {
             caseBoard.setRotation(0);
         caseBoard.setImageResource(img);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, .25f);
-        params.setMargins(50, 10, 50, 10);
+        params.setMargins(10, 10, 10, 10);
+        caseBoard.setAdjustViewBounds(true);
         caseBoard.setLayoutParams(params);
 
         listReserve.get(nomJoueur).add(caseBoard);
@@ -285,6 +287,7 @@ public class Game extends Page {
         reserveLinearLayouts.get(nomJoueur).removeView(listReserve.get(nomJoueur).get(index));
         listReserve.get(nomJoueur).remove(index);
     }
+
     // change l'aspect des pieces lors d'un changement de joueur
     public void setCurrentPlayer(String nomJoueur) {
         for(ImageView img : listReserve.get(jeu.getGestionnaireJoueur().getJoueurActuel().getNom())){
@@ -306,6 +309,7 @@ public class Game extends Page {
             boardPawns[x][y].setColorFilter(Color.parseColor("#B2333333"));
         }
     }
+
     public void displayDialogEvolution(final PionEvoluable pion){
         AlertDialog dialog = new AlertDialog.Builder(root.getContext())
                 .setView(getActivity().getLayoutInflater().inflate(R.layout.dialog_evolution,null))
@@ -339,6 +343,7 @@ public class Game extends Page {
         imgEvolution.setImageResource(pion.getEvolution().getImg());
 
     }
+
     public void changeViewPion(Pion pion){
         int x = jeu.getGestionnairePion().getKey(pion).getX();
         int y = jeu.getGestionnairePion().getKey(pion).getY();
