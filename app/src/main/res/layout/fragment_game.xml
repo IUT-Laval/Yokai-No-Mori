@@ -19,7 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.08"
+                android:layout_weight="0.09"
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
                 <HorizontalScrollView
@@ -38,13 +38,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bord_bas_texture"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.01"
-                android:background="#3498db"/>
+                android:background="@drawable/bord_haut_herbe_texture"
+                android:layout_marginTop="-7dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,19 +94,16 @@
                 </ImageView>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.01"
-                android:background="#e74c3c"/>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bord_haut_texture"/>
+                android:background="@drawable/bord_bas_herbe_texture"
+                android:layout_marginBottom="-8dp"
+                android:translationZ="1dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.08"
+                android:layout_weight="0.09"
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
                 <HorizontalScrollView
