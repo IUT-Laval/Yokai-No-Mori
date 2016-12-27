@@ -1,9 +1,13 @@
 package com.laval.iut.yokainomori.pages;
 
 import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.content.ClipData;
 import android.content.DialogInterface;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.util.ArrayMap;
@@ -15,12 +19,14 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu;
 import com.laval.iut.yokainomori.core.Jeu34;
+import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
 import com.laval.iut.yokainomori.core.JoueurListener;
@@ -82,7 +88,7 @@ public class Game extends Page {
         ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
         ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
 
-        jeu = new Jeu34();
+        jeu = new Jeu56();
         lines = jeu.getPlateau().getHauteur();
         rows = jeu.getPlateau().getLargeur();
 
@@ -333,8 +339,6 @@ public class Game extends Page {
             img.setColorFilter(Color.parseColor("#B2333333"));
         }
         for (Pion pion : jeu.getGestionnaireJoueur().getJoueurActuel().getPions()) {
-            Log.d("pion", pion.toString());
-            Log.d("case", jeu.getGestionnairePion().getKey(pion).toString());
             int x = jeu.getGestionnairePion().getKey(pion).getX();
             int y = jeu.getGestionnairePion().getKey(pion).getY();
             boardPawns[x][y].clearColorFilter();
@@ -347,29 +351,9 @@ public class Game extends Page {
     }
 
     public void displayDialogEvolution(final PionEvoluable pion) {
-        AlertDialog dialog = new AlertDialog.Builder(root.getContext())
+
+        final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
                 .setView(getActivity().getLayoutInflater().inflate(R.layout.dialog_evolution, null))
-                .setTitle(R.string.dialog_evolution_title)
-                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        PionEvoluable pionE = (PionEvoluable) pion;
-                        pionE.evoluer();
-                        changeViewPion(pion);
-                        dialog.dismiss();
-                    }
-                })
-                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                })
-                .setNeutralButton(R.string.see_the_game, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // à modif voir feuille
-                        dialog.dismiss();
-                    }
-                })
-                .setIcon(R.drawable.level_up)
                 .setCancelable(false)
                 .show();
 
@@ -377,6 +361,50 @@ public class Game extends Page {
         imgPawn.setImageResource(pion.getImg());
         ImageView imgEvolution = (ImageView) dialog.findViewById(R.id.viewEvolution);
         imgEvolution.setImageResource(pion.getEvolution().getImg());
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#96000000")));
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog);
+        ((Button)(dialog.findViewById(R.id.see_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final int x = jeu.getGestionnairePion().getKey(pion).getX();
+                final int y = jeu.getGestionnairePion().getKey(pion).getY();
+                boardPawns[x][y].setColorFilter(Color.parseColor("#70ffd700"));
+                root.findViewById(R.id.disable_listener_layout).setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                            displayDialogEvolution(pion);
+                            v.setOnTouchListener(null);
+                            boardPawns[x][y].clearColorFilter();
+                            return true;
+                        }
+                        else
+                            return false;
+                    }
+                });
+                dialog.dismiss();
+            }
+        });
+        ((Button)(dialog.findViewById(R.id.no_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jeu.getGestionnaireJoueur().joueurSuivant();
+                dialog.dismiss();
+            }
+        });
+        ((Button)(dialog.findViewById(R.id.yes_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PionEvoluable pionE = (PionEvoluable) pion;
+                pionE.evoluer();
+                changeViewPion(pion);
+                jeu.getGestionnaireJoueur().joueurSuivant();
+                dialog.dismiss();
+            }
+        });
+        if(jeu.getGestionnaireJoueur().getIndexJoueurActuel()==1){
+            ((LinearLayout)dialog.findViewById(R.id.dialog_layout)).setRotation(180);
+        }
 
     }
 

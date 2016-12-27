@@ -171,6 +171,11 @@
         android:fitsSystemWindows="true"
         app:menu="@menu/navigation_view_elements"
         android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/disable_listener_layout"></RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>
+
 

@@ -9,4 +9,6 @@
 
     <color name="win">#2c3e50</color>
     <color name="textWin">#8f9599</color>
+
+    <color name="dialogBackground">#424242</color>
 </resources>

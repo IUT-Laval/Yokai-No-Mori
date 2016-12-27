@@ -79,15 +79,20 @@ public abstract class Jeu {
 						for (JeuListener l : jeuListener) {
 							l.evoluePion(pion);
 						}
+						gestionnaireJoueur.joueurSuivant();
 					}
 					//demande evolution
 					else{
 						for (JeuListener l : jeuListener) {
+							// attention, le gestion du joueur suivant se fait ici coté vue :
+							// on attend reponse de l'utilisateur avant de passer au joueur suivant.
 							l.demandeEvolutionPion(pionE);
 						}
 					}
 				}
-				gestionnaireJoueur.joueurSuivant();
+				else {
+					gestionnaireJoueur.joueurSuivant();
+				}
 				return true;
 			}
 		}

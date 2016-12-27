@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_layout"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/dialogBackground"
+    android:alpha="0.8">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="24dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="32sp"
+            android:src="@drawable/level_up"
+            android:adjustViewBounds="true"
+            android:alpha="0.8"/>
+        <TextView
+            android:layout_marginLeft="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:text="@string/dialog_evolution_title"
+            android:textStyle="bold"
+            android:alpha="0.85"/>
+
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="24dp"
         android:textSize="15sp"
-        android:text="@string/dialog_evolution_message"/>
+        android:text="@string/dialog_evolution_message"
+        android:alpha="0.8"
+        android:textColor="#ffffff"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,6 +74,51 @@
         android:textSize="17sp"
         android:textStyle="bold"
         android:padding="24dp"
+        android:alpha="0.8"
+        android:textColor="#ffffff"
         android:text="@string/dialog_evolution_question"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp">
+        <Button
+            android:id="@+id/see_button"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:minWidth="64dp"
+            android:text="@string/see_the_game"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:background="@drawable/custom_button"
+            android:textColor="#FFFFFF"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></LinearLayout>
+        <Button
+            android:id="@+id/no_button"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:minWidth="64dp"
+            android:text="@string/no"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:background="@drawable/custom_button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="8dp"/>
+        <Button
+            android:id="@+id/yes_button"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:minWidth="64dp"
+            android:text="@string/yes"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:background="@drawable/custom_button"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
 
 </LinearLayout>
