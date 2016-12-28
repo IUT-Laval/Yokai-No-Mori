@@ -19,7 +19,9 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -61,21 +63,6 @@ public class Game extends Page {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = (ViewGroup) inflater.inflate(R.layout.fragment_game, null);
 
-        ImageView gotohome = (ImageView) root.findViewById(R.id.gotohome);
-        ImageView replay = (ImageView) root.findViewById(R.id.replay);
-        gotohome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changePage(PageName.HOME);
-            }
-        });
-        replay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                init();
-            }
-        });
-
         init();
 
         return root;
@@ -83,7 +70,6 @@ public class Game extends Page {
 
     public void init() {
 
-        ((LinearLayout) root.findViewById(R.id.winPanel)).setVisibility(View.INVISIBLE);
         ((LinearLayout) root.findViewById(R.id.board)).removeAllViews();
         ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
         ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
@@ -92,7 +78,6 @@ public class Game extends Page {
         lines = jeu.getPlateau().getHauteur();
         rows = jeu.getPlateau().getLargeur();
 
-        final LinearLayout winPanel = (LinearLayout) root.findViewById(R.id.winPanel);
 
         jeu.addJeuListeners(new JeuListener() {
             @Override
@@ -116,9 +101,7 @@ public class Game extends Page {
 
             @Override
             public void finPartie(int gagnant) {
-                winPanel.setVisibility(View.VISIBLE);
-                if (gagnant == 1)
-                    winPanel.setRotation(180);
+                displayWinPanel(gagnant);
             }
 
             @Override
@@ -412,5 +395,30 @@ public class Game extends Page {
         int x = jeu.getGestionnairePion().getKey(pion).getX();
         int y = jeu.getGestionnairePion().getKey(pion).getY();
         boardPawns[x][y].setImageResource(pion.getImg());
+    }
+    public void displayWinPanel(int gagnant){
+        final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
+                .setView(getActivity().getLayoutInflater().inflate(R.layout.win_panel, null))
+                .setCancelable(false)
+                .show();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#96000000")));
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog);
+        ((ImageButton)(dialog.findViewById(R.id.home_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePage(PageName.HOME);
+                dialog.dismiss();
+            }
+        });
+        ((ImageButton)(dialog.findViewById(R.id.replay_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                init();
+                dialog.dismiss();
+            }
+        });
+        if (gagnant == 1)
+            ((LinearLayout)dialog.findViewById(R.id.dialog_layout)).setRotation(180);
+        dialog.getWindow().setLayout((this.getView().getWidth()*3)/4,WindowManager.LayoutParams.WRAP_CONTENT);
     }
 }
