@@ -139,6 +139,7 @@
         android:layout_width="wrap_content"
         android:layout_gravity="end"
         app:menu="@menu/navigation_view_elements"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
         android:rotation="180"/>
 
 
