@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <group android:id="@+id/options">
+        <item
+            android:id="@+id/option1"
+            android:title="option1 (à modif)" />
+        <item
+            android:id="@+id/option2"
+            android:title="option2 (à modif)" />
+    </group>
     <item
         android:id="@+id/reprendre"
-        android:title="@string/resume" />
+        android:title="@string/resume"
+        android:icon="@drawable/resume"/>
     <item
         android:id="@+id/match_nul"
-        android:title="@string/declarer_nul" />
-    <item
-        android:id="@+id/options"
-        android:title="@string/options" />
+        android:title="@string/declarer_nul"
+        android:icon="@drawable/yin_yang"/>
     <item
         android:id="@+id/recommencer"
-        android:title="@string/replay" />
+        android:title="@string/replay"
+        android:icon="@drawable/replay"/>
     <item
         android:id="@+id/quitter"
-        android:title="@string/quit" />
+        android:title="@string/quit"
+        android:icon="@drawable/home"/>
 
 </menu>
