@@ -1,19 +1,15 @@
 package com.laval.iut.yokainomori.pages;
 
 import android.app.AlertDialog;
-import android.app.DialogFragment;
 import android.content.ClipData;
-import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.DragEvent;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -28,7 +24,6 @@ import android.widget.LinearLayout;
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu;
 import com.laval.iut.yokainomori.core.Jeu34;
-import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
 import com.laval.iut.yokainomori.core.JoueurListener;
@@ -101,12 +96,12 @@ public class Game extends Page {
 
             @Override
             public void finPartie(int gagnant) {
-                displayWinPanel(gagnant);
+                displayWinDialog(gagnant);
             }
 
             @Override
             public void demandeEvolutionPion(PionEvoluable pion) {
-                displayDialogEvolution(pion);
+                displayEvolutionDialog(pion);
             }
 
             @Override
@@ -156,7 +151,7 @@ public class Game extends Page {
                 } else
                     caseBoard.setImageResource(R.drawable.empty);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, .25f);
-                params.setMargins(10, 0, 10, 10);
+                params.setMargins(10, 5, 10, 5);
                 caseBoard.setLayoutParams(params);
                 tempLinearLayout.addView(caseBoard);
                 boardPawns[j][i] = caseBoard;
@@ -236,8 +231,8 @@ public class Game extends Page {
         setCurrentPlayer(jeu.getGestionnaireJoueur().getJoueurActuel().getNom());
         // menu pause
         final DrawerLayout drawerLayout = (DrawerLayout) root.findViewById(R.id.drawer_layout);
-        NavigationView navigationView = (NavigationView) root.findViewById(R.id.navigationView);
-        navigationView.setNavigationItemSelectedListener(
+        NavigationView navigationViewJ1 = (NavigationView) root.findViewById(R.id.navigationViewJ1);
+        navigationViewJ1.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -255,9 +250,41 @@ public class Game extends Page {
                             case R.id.options:
                                 //changePage(PageName.);
                                 return true;
+                            case R.id.match_nul:
+                                drawerLayout.closeDrawers();
+                                jeu.matchNul();
+                                displayDrawDialog();
+                                return true;
                         }
-                        drawerLayout.closeDrawers();
-                        return true;
+                        return false;
+                    }
+                });
+        NavigationView navigationViewJ2 = (NavigationView) root.findViewById(R.id.navigationViewJ2);
+        navigationViewJ2.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
+                            case R.id.quitter:
+                                changePage(PageName.HOME);
+                                return true;
+                            case R.id.recommencer:
+                                init();
+                                drawerLayout.closeDrawers();
+                                return true;
+                            case R.id.reprendre:
+                                drawerLayout.closeDrawers();
+                                return true;
+                            case R.id.options:
+                                //changePage(PageName.);
+                                return true;
+                            case R.id.match_nul:
+                                drawerLayout.closeDrawers();
+                                jeu.matchNul();
+                                displayDrawDialog();
+                                return true;
+                        }
+                        return false;
                     }
                 });
     }
@@ -333,10 +360,10 @@ public class Game extends Page {
         }
     }
 
-    public void displayDialogEvolution(final PionEvoluable pion) {
+    public void displayEvolutionDialog(final PionEvoluable pion) {
 
         final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
-                .setView(getActivity().getLayoutInflater().inflate(R.layout.dialog_evolution, null))
+                .setView(getActivity().getLayoutInflater().inflate(R.layout.evolution_dialog, null))
                 .setCancelable(false)
                 .show();
 
@@ -356,7 +383,7 @@ public class Game extends Page {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
                         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                            displayDialogEvolution(pion);
+                            displayEvolutionDialog(pion);
                             v.setOnTouchListener(null);
                             boardPawns[x][y].clearColorFilter();
                             return true;
@@ -396,9 +423,9 @@ public class Game extends Page {
         int y = jeu.getGestionnairePion().getKey(pion).getY();
         boardPawns[x][y].setImageResource(pion.getImg());
     }
-    public void displayWinPanel(int gagnant){
+    public void displayWinDialog(int gagnant){
         final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
-                .setView(getActivity().getLayoutInflater().inflate(R.layout.win_panel, null))
+                .setView(getActivity().getLayoutInflater().inflate(R.layout.win_dialog, null))
                 .setCancelable(false)
                 .show();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#96000000")));
@@ -421,4 +448,42 @@ public class Game extends Page {
             ((LinearLayout)dialog.findViewById(R.id.dialog_layout)).setRotation(180);
         dialog.getWindow().setLayout((this.getView().getWidth()*3)/4,WindowManager.LayoutParams.WRAP_CONTENT);
     }
+    public void displayDrawDialog(){
+        final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
+                .setView(getActivity().getLayoutInflater().inflate(R.layout.draw_dialog, null))
+                .setCancelable(false)
+                .show();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#96000000")));
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog);
+        ((ImageButton)(dialog.findViewById(R.id.home_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePage(PageName.HOME);
+                dialog.dismiss();
+            }
+        });
+        ((ImageButton)(dialog.findViewById(R.id.replay_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                init();
+                dialog.dismiss();
+            }
+        });
+        ((ImageButton)(dialog.findViewById(R.id.home_button2))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePage(PageName.HOME);
+                dialog.dismiss();
+            }
+        });
+        ((ImageButton)(dialog.findViewById(R.id.replay_button2))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                init();
+                dialog.dismiss();
+            }
+        });
+        dialog.getWindow().setLayout((this.getView().getWidth()*3)/4,WindowManager.LayoutParams.WRAP_CONTENT);
+    }
+
 }

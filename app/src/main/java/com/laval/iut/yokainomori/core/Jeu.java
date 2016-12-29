@@ -140,6 +140,16 @@ public abstract class Jeu {
 		return false;
 	}
 
+	public List<JeuListener> getJeuListener() {
+		return jeuListener;
+	}
+
+	public void matchNul(){
+		termine = true;
+		vainqueur = null;
+
+	}
+
 	public BidiMap<Case, Pion> getGestionnairePion() {
 		return gestionnairePion;
 	}

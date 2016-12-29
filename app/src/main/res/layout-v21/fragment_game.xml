@@ -35,6 +35,11 @@
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bord_haut_herbe_texture"
+                android:layout_marginTop="-7dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,8 +54,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="-3dp"
                     android:src="@drawable/escalier">
                 </ImageView>
+                <ImageView
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_haut_texture"/>
 
                 <LinearLayout
                     android:layout_marginRight="20dp"
@@ -64,17 +76,30 @@
 
                 </LinearLayout>
                 <ImageView
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_bas_texture"/>
+                <ImageView
 
-                    android:layout_gravity="end"
+                    android:layout_gravity="right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="30dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_marginTop="-3dp"
                     android:src="@drawable/escalier"
                     android:rotation="180">
                 </ImageView>
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bord_bas_herbe_texture"
+                android:layout_marginBottom="-7dp"
+                android:translationZ="1dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

@@ -19,7 +19,7 @@ public class Jeu34 extends Jeu {
 								.contains(getGestionnairePion().get(getPlateau().getCases()[i][y]))) {
 					setTermine(true);
 					setVainqueur(getGestionnaireJoueur().getJoueurAdverse());
-					for (JeuListener l : getJeuListener()) {
+					for (JeuListener l : this.getJeuListener()) {
 						l.finPartie(getGestionnaireJoueur().getIndexJoueurAdverse());
 					}
 				}

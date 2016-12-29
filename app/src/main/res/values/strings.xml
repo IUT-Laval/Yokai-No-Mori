@@ -12,4 +12,6 @@
     <string name="replay">Recommencer</string>
     <string name="options">Options</string>
     <string name="resume">Reprendre</string>
+    <string name="draw">Match nul !</string>
+    <string name="declarer_nul">Déclarer match nul</string>
 </resources>
