@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu;
 import com.laval.iut.yokainomori.core.Jeu34;
+import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
 import com.laval.iut.yokainomori.core.JoueurListener;
@@ -69,7 +70,7 @@ public class Game extends Page {
         ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
         ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
 
-        jeu = new Jeu34();
+        jeu = new Jeu56();
         lines = jeu.getPlateau().getHauteur();
         rows = jeu.getPlateau().getLargeur();
 
