@@ -75,12 +75,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonJouer.setAlpha(160);
+                        boutonJouer.getBackground().setAlpha(160);
                         return true;
                     
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonJouer.setAlpha(255);
+                        boutonJouer.getBackground.setAlpha(255);
                         return true;
                 }
                 return false;
@@ -93,12 +93,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonCredits.setAlpha(160);
+                        boutonCredits.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonCredits.setAlpha(255);
+                        boutonCredits.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -111,12 +111,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonRegles.setAlpha(160);
+                        boutonRegles.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonRegles.setAlpha(255);
+                        boutonRegles.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -129,12 +129,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonQuitter.setAlpha(160);
+                        boutonQuitter.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonQuitter.setAlpha(255);
+                        boutonQuitter.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
