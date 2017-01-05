@@ -15,4 +15,7 @@
     <string name="draw">Match nul !</string>
     <string name="declarer_nul">Déclarer match nul</string>
     <string name="texte_bouton_jouer">Jouer</string>
+    <string name="texte_bouton_credits">Crédits</string>
+    <string name="texte_bouton_regles">Règles</string>
+    <string name="texte_bouton_quitter">Quitter</string>
 </resources>
