@@ -39,7 +39,7 @@ public class Home extends Page {
 
 
 
-        // LIsteners pour ouvrir les pages
+        // Listeners pour ouvrir les pages
         boutonJouer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,12 +75,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonJouer.getBackground().setAlpha(160);
+                        v.getBackground().setAlpha(160);
                         return true;
                     
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonJouer.getBackground.setAlpha(255);
+                        v.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -93,12 +93,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonCredits.getBackground().setAlpha(160);
+                        v.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonCredits.getBackground().setAlpha(255);
+                        v.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -111,12 +111,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonRegles.getBackground().setAlpha(160);
+                        v.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonRegles.getBackground().setAlpha(255);
+                        v.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -129,12 +129,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        boutonQuitter.getBackground().setAlpha(160);
+                        v.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonQuitter.getBackground().setAlpha(255);
+                        v.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;

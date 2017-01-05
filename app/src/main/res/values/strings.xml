@@ -14,4 +14,5 @@
     <string name="resume">Reprendre</string>
     <string name="draw">Match nul !</string>
     <string name="declarer_nul">Déclarer match nul</string>
+    <string name="texte_bouton_jouer">Jouer</string>
 </resources>

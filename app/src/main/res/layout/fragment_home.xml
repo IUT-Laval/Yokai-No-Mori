@@ -94,7 +94,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/bouton"
                             android:layout_weight="1"
-                            android:id="@+id/boutonCredits"/>
+                            android:id="@+id/boutonCredits" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
