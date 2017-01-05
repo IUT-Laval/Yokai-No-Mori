@@ -16,10 +16,10 @@ import com.laval.iut.yokainomori.R;
 public class Home extends Page {
 
     private ViewGroup root;
-    protected ImageButton boutonJouer;
-    protected ImageButton boutonQuitter;
-    protected ImageButton boutonCredits;
-    protected ImageButton boutonRegles;
+    private ImageButton boutonJouer;
+    private ImageButton boutonQuitter;
+    private ImageButton boutonCredits;
+    private ImageButton boutonRegles;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,10 +32,10 @@ public class Home extends Page {
 
     public void init() {
 
-        ImageButton boutonJouer = (ImageButton) root.findViewById(R.id.boutonJouer);
-        ImageButton boutonCredits = (ImageButton) root.findViewById(R.id.boutonCredits);
-        ImageButton boutonRegles = (ImageButton) root.findViewById(R.id.boutonRegles);
-        ImageButton boutonQuitter = (ImageButton) root.findViewById(R.id.boutonQuitter);
+        boutonJouer = (ImageButton) root.findViewById(R.id.boutonJouer);
+        boutonCredits = (ImageButton) root.findViewById(R.id.boutonCredits);
+        boutonRegles = (ImageButton) root.findViewById(R.id.boutonRegles);
+        boutonQuitter = (ImageButton) root.findViewById(R.id.boutonQuitter);
 
 
 
@@ -75,12 +75,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        v.getBackground().setAlpha(160);
+                        boutonJouer.getBackground().setAlpha(160);
                         return true;
                     
                     // Released
                     case MotionEvent.ACTION_UP :
-                        v.getBackground().setAlpha(255);
+                        boutonJouer.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -93,12 +93,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        v.getBackground().setAlpha(160);
+                        boutonCredits.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        v.getBackground().setAlpha(255);
+                        boutonCredits.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -111,12 +111,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        v.getBackground().setAlpha(160);
+                        boutonRegles.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        v.getBackground().setAlpha(255);
+                        boutonRegles.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
@@ -129,12 +129,12 @@ public class Home extends Page {
                 switch(event.getAction()) {
                     // Pressed
                     case MotionEvent.ACTION_DOWN :
-                        v.getBackground().setAlpha(160);
+                        boutonQuitter.getBackground().setAlpha(160);
                         return true;
 
                     // Released
                     case MotionEvent.ACTION_UP :
-                        v.getBackground().setAlpha(255);
+                        boutonQuitter.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;

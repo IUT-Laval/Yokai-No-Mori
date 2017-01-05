@@ -81,7 +81,8 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/bouton"
                             android:layout_weight="1"
-                            android:id="@+id/boutonJouer"/>
+                            android:id="@+id/boutonJouer"
+                            android:text="@string/texte_bouton_jouer"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
