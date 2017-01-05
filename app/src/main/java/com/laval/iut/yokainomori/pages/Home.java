@@ -16,8 +16,8 @@ import com.laval.iut.yokainomori.R;
 public class Home extends Page {
 
     private ViewGroup root;
-    protected ImageButton boutonJouer;
-    protected ImageButton boutonQuitter;
+    private ImageButton boutonJouer;
+    private ImageButton boutonQuitter;
     protected ImageButton boutonCredits;
     protected ImageButton boutonRegles;
 
