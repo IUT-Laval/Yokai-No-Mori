@@ -18,8 +18,8 @@ public class Home extends Page {
     private ViewGroup root;
     private ImageButton boutonJouer;
     private ImageButton boutonQuitter;
-    protected ImageButton boutonCredits;
-    protected ImageButton boutonRegles;
+    private ImageButton boutonCredits;
+    private ImageButton boutonRegles;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,14 +32,14 @@ public class Home extends Page {
 
     public void init() {
 
-        ImageButton boutonJouer = (ImageButton) root.findViewById(R.id.boutonJouer);
-        ImageButton boutonCredits = (ImageButton) root.findViewById(R.id.boutonCredits);
-        ImageButton boutonRegles = (ImageButton) root.findViewById(R.id.boutonRegles);
-        ImageButton boutonQuitter = (ImageButton) root.findViewById(R.id.boutonQuitter);
+        boutonJouer = (ImageButton) root.findViewById(R.id.boutonJouer);
+        boutonCredits = (ImageButton) root.findViewById(R.id.boutonCredits);
+        boutonRegles = (ImageButton) root.findViewById(R.id.boutonRegles);
+        boutonQuitter = (ImageButton) root.findViewById(R.id.boutonQuitter);
 
 
 
-        // LIsteners pour ouvrir les pages
+        // Listeners pour ouvrir les pages
         boutonJouer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +80,7 @@ public class Home extends Page {
                     
                     // Released
                     case MotionEvent.ACTION_UP :
-                        boutonJouer.getBackground.setAlpha(255);
+                        boutonJouer.getBackground().setAlpha(255);
                         return true;
                 }
                 return false;
