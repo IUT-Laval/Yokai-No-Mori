@@ -294,6 +294,8 @@ public class Game extends Page {
                         return false;
                     }
                 });
+        ((ImageView)root.findViewById(R.id.resizej1)).setColorFilter(Color.parseColor("#B2333333"));
+        ((ImageView)root.findViewById(R.id.resizej2)).setColorFilter(Color.parseColor("#B2333333"));
     }
 
     public void capture(int img, final String nomJoueur, boolean isRetourne) {
