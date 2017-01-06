@@ -309,25 +309,25 @@ public class Game extends Page {
         reserve1Right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                horizontalScrollView1.scrollTo(horizontalScrollView1.getScrollX()-scrollBy, 0);
+                horizontalScrollView1.smoothScrollTo(horizontalScrollView1.getScrollX()+scrollBy, 0);
             }
         });
         reserve1Left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                horizontalScrollView1.scrollTo(horizontalScrollView1.getScrollX()+scrollBy, 0);
+                horizontalScrollView1.smoothScrollTo(horizontalScrollView1.getScrollX()-scrollBy, 0);
             }
         });
         reserve2Right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                horizontalScrollView2.scrollTo(horizontalScrollView2.getScrollX()+scrollBy, 0);
+                horizontalScrollView2.smoothScrollTo(horizontalScrollView2.getScrollX()+scrollBy, 0);
             }
         });
         reserve2Left.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                horizontalScrollView2.scrollTo(horizontalScrollView2.getScrollX()-scrollBy, 0);
+                horizontalScrollView2.smoothScrollTo(horizontalScrollView2.getScrollX()-scrollBy, 0);
             }
         });
 

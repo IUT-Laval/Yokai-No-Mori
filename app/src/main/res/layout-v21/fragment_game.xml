@@ -23,12 +23,16 @@
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
                 <ImageView
-                    android:id="@+id/reserve1_right"
+                    android:layout_margin="5dp"
+                    android:id="@+id/reserve1_left"
                     android:src="@drawable/arrow_reserve"
+                    android:background="@drawable/custom_button"
                     android:layout_weight="0.10"
+                    android:padding="2dp"
                     android:layout_width="0dp"
                     android:scaleType="fitCenter"
                     android:rotation="180"
+                    android:alpha="0.75"
                     android:layout_height="match_parent" />
                 <HorizontalScrollView
                     android:id="@+id/scroll1"
@@ -52,11 +56,15 @@
                     </LinearLayout>
                 </HorizontalScrollView>
                 <ImageView
-                    android:id="@+id/reserve1_left"
+                    android:layout_margin="5dp"
+                    android:id="@+id/reserve1_right"
                     android:src="@drawable/arrow_reserve"
+                    android:background="@drawable/custom_button"
                     android:layout_weight="0.10"
+                    android:padding="2dp"
                     android:layout_width="0dp"
                     android:scaleType="fitCenter"
+                    android:alpha="0.75"
                     android:layout_height="match_parent" />
             </LinearLayout>
             <ImageView
@@ -131,12 +139,16 @@
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
                 <ImageView
+                    android:layout_margin="5dp"
                     android:id="@+id/reserve2_left"
                     android:src="@drawable/arrow_reserve"
+                    android:background="@drawable/custom_button"
                     android:layout_weight="0.10"
+                    android:padding="2dp"
                     android:layout_width="0dp"
                     android:scaleType="fitCenter"
                     android:rotation="180"
+                    android:alpha="0.75"
                     android:layout_height="match_parent" />
                 <HorizontalScrollView
                     android:id="@+id/scroll2"
@@ -151,11 +163,15 @@
                     </LinearLayout>
                 </HorizontalScrollView>
                 <ImageView
+                    android:layout_margin="5dp"
                     android:id="@+id/reserve2_right"
                     android:src="@drawable/arrow_reserve"
+                    android:background="@drawable/custom_button"
                     android:layout_weight="0.10"
+                    android:padding="2dp"
                     android:layout_width="0dp"
                     android:scaleType="fitCenter"
+                    android:alpha="0.75"
                     android:layout_height="match_parent" />
             </LinearLayout>
         </LinearLayout>
