@@ -70,11 +70,11 @@ public class Game extends Page {
         ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
         ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
 
-        jeu = new Jeu56();
+        jeu.initialiserJeu();
         lines = jeu.getPlateau().getHauteur();
         rows = jeu.getPlateau().getLargeur();
 
-
+        jeu.removeListeners();
         jeu.addJeuListeners(new JeuListener() {
             @Override
             public void init() {
@@ -239,7 +239,10 @@ public class Game extends Page {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
                             case R.id.quitter:
+
                                 changePage(PageName.HOME);
+                                drawerLayout.closeDrawer(navigationViewJ1);
+
                                 return true;
                             case R.id.recommencer:
                                 init();
@@ -256,6 +259,7 @@ public class Game extends Page {
                                 jeu.matchNul();
                                 displayDrawDialog();
                                 return true;
+
                         }
                         return false;
                     }
@@ -267,6 +271,7 @@ public class Game extends Page {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
                             case R.id.quitter:
+                                drawerLayout.closeDrawers();
                                 changePage(PageName.HOME);
                                 return true;
                             case R.id.recommencer:

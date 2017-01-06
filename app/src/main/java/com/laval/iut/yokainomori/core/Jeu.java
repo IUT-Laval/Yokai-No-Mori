@@ -19,10 +19,10 @@ public abstract class Jeu {
     public void addJeuListeners(JeuListener l) {
         jeuListener.add(l);
     }
+	public void removeListeners(){ jeuListener.clear();}
 
 
 	public Jeu() {
-		initialiserJeu();
 	}
 
 	/**
@@ -191,6 +191,8 @@ public abstract class Jeu {
 	 */
 	// ici les pion des pions evoluable ne devrai pas etre referencer pour pas de double pr�sence
 	public void initialiserJeu() {
+		vainqueur = null;
+		termine = false;
         for (JeuListener l : jeuListener) {
             l.init();
         }
