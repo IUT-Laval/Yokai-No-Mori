@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -68,8 +69,8 @@ public class Game extends Page {
     public void init() {
 
         ((LinearLayout) root.findViewById(R.id.board)).removeAllViews();
-        ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
-        ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
+        //((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
+        //((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
 
         jeu.initialiserJeu();
         lines = jeu.getPlateau().getHauteur();
@@ -296,6 +297,40 @@ public class Game extends Page {
                 });
         ((ImageView)root.findViewById(R.id.resizej1)).setColorFilter(Color.parseColor("#B2333333"));
         ((ImageView)root.findViewById(R.id.resizej2)).setColorFilter(Color.parseColor("#B2333333"));
+
+        ImageView reserve1Right = (ImageView) root.findViewById(R.id.reserve1_right);
+        ImageView reserve1Left = (ImageView) root.findViewById(R.id.reserve1_left);
+        ImageView reserve2Right = (ImageView) root.findViewById(R.id.reserve2_right);
+        ImageView reserve2Left = (ImageView) root.findViewById(R.id.reserve2_left);
+        final HorizontalScrollView horizontalScrollView1 = (HorizontalScrollView) root.findViewById(R.id.scroll1);
+        final HorizontalScrollView horizontalScrollView2 = (HorizontalScrollView) root.findViewById(R.id.scroll2);
+
+        final int scrollBy = 30;
+        reserve1Right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                horizontalScrollView1.scrollTo(horizontalScrollView1.getScrollX()-scrollBy, 0);
+            }
+        });
+        reserve1Left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                horizontalScrollView1.scrollTo(horizontalScrollView1.getScrollX()+scrollBy, 0);
+            }
+        });
+        reserve2Right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                horizontalScrollView2.scrollTo(horizontalScrollView2.getScrollX()+scrollBy, 0);
+            }
+        });
+        reserve2Left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                horizontalScrollView2.scrollTo(horizontalScrollView2.getScrollX()-scrollBy, 0);
+            }
+        });
+
     }
 
     public void capture(int img, final String nomJoueur, boolean isRetourne) {

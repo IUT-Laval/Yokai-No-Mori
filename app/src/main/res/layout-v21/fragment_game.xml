@@ -22,7 +22,16 @@
                 android:layout_weight="0.09"
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
+                <ImageView
+                    android:id="@+id/reserve1_right"
+                    android:src="@drawable/arrow_reserve"
+                    android:layout_weight="0.10"
+                    android:layout_width="0dp"
+                    android:scaleType="fitCenter"
+                    android:rotation="180"
+                    android:layout_height="match_parent" />
                 <HorizontalScrollView
+                    android:id="@+id/scroll1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.75">
@@ -31,9 +40,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
-
+                        <!--
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:layout_margin="10px"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/kodama"/>
+                        -->
                     </LinearLayout>
                 </HorizontalScrollView>
+                <ImageView
+                    android:id="@+id/reserve1_left"
+                    android:src="@drawable/arrow_reserve"
+                    android:layout_weight="0.10"
+                    android:layout_width="0dp"
+                    android:scaleType="fitCenter"
+                    android:layout_height="match_parent" />
             </LinearLayout>
             <ImageView
                 android:layout_width="match_parent"
@@ -106,7 +130,16 @@
                 android:layout_weight="0.09"
                 android:orientation="horizontal"
                 android:background="@drawable/wood_texture">
+                <ImageView
+                    android:id="@+id/reserve2_left"
+                    android:src="@drawable/arrow_reserve"
+                    android:layout_weight="0.10"
+                    android:layout_width="0dp"
+                    android:scaleType="fitCenter"
+                    android:rotation="180"
+                    android:layout_height="match_parent" />
                 <HorizontalScrollView
+                    android:id="@+id/scroll2"
                     android:layout_weight="0.75"
                     android:layout_width="0dp"
                     android:layout_height="match_parent">
@@ -115,9 +148,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
-
                     </LinearLayout>
                 </HorizontalScrollView>
+                <ImageView
+                    android:id="@+id/reserve2_right"
+                    android:src="@drawable/arrow_reserve"
+                    android:layout_weight="0.10"
+                    android:layout_width="0dp"
+                    android:scaleType="fitCenter"
+                    android:layout_height="match_parent" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
