@@ -22,20 +22,51 @@
             android:layout_height="match_parent"
             android:layout_weight="1.2"
             android:orientation="horizontal">
-            <ImageView
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.27"
-                android:background="@drawable/grass_texture"/>
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/grass_texture"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_bas_herbe_texture"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bord_gauche_herbe_texture"/>
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.33"/>
             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bord_droite_herbe_texture"/>
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.27"
-                android:background="@drawable/grass_texture"/>
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/grass_texture"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_bas_herbe_texture"/>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -61,15 +92,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"/>
+
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:background="@drawable/wood_texture"
+                        android:background="@drawable/custom_menu_button"
                         android:id="@+id/boutonJouer"
                         android:text="@string/texte_bouton_jouer"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textAllCaps="true"/>
+
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -99,10 +132,10 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
                         android:layout_marginLeft="10dp"
-                        android:background="@drawable/wood_texture"
+                        android:background="@drawable/custom_menu_button"
                         android:id="@+id/boutonRegles"
                         android:text="@string/texte_bouton_regles"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textAllCaps="true"/>
                     <Space
                         android:layout_width="match_parent"
@@ -122,16 +155,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.25"/>
+
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/wood_texture"
+                        android:background="@drawable/custom_menu_button"
                         android:id="@+id/boutonCredits"
                         android:text="@string/texte_bouton_credits"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textAllCaps="true"/>
+
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -160,10 +195,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:background="@drawable/wood_texture"
+                        android:background="@drawable/custom_menu_button"
                         android:id="@+id/boutonQuitter"
                         android:text="@string/texte_bouton_quitter"
-                        android:textSize="30sp"
+                        android:textSize="20sp"
                         android:textAllCaps="true"/>
                     <Space
                         android:layout_width="match_parent"
@@ -182,20 +217,52 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.2">
-            <ImageView
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.27"
-                android:background="@drawable/grass_texture"/>
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_haut_herbe_texture"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/grass_texture"/>
+
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bord_gauche_herbe_texture"/>
             <Space
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="0.33"/>
             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bord_droite_herbe_texture"/>
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.27"
-                android:background="@drawable/grass_texture"/>
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bord_haut_herbe_texture"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/grass_texture"/>
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

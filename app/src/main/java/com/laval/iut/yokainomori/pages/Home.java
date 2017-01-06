@@ -30,10 +30,10 @@ import java.util.List;
 public class Home extends Page {
 
     private ViewGroup root;
-    private ImageButton boutonJouer;
-    private ImageButton boutonQuitter;
-    private ImageButton boutonCredits;
-    private ImageButton boutonRegles;
+    private Button boutonJouer;
+    private Button boutonQuitter;
+    private Button boutonCredits;
+    private Button boutonRegles;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -101,10 +101,10 @@ public class Home extends Page {
 
     public void init() {
 
-        boutonJouer = (ImageButton) root.findViewById(R.id.boutonJouer);
-        boutonCredits = (ImageButton) root.findViewById(R.id.boutonCredits);
-        boutonRegles = (ImageButton) root.findViewById(R.id.boutonRegles);
-        boutonQuitter = (ImageButton) root.findViewById(R.id.boutonQuitter);
+        boutonJouer = (Button) root.findViewById(R.id.boutonJouer);
+        boutonCredits = (Button) root.findViewById(R.id.boutonCredits);
+        boutonRegles = (Button) root.findViewById(R.id.boutonRegles);
+        boutonQuitter = (Button) root.findViewById(R.id.boutonQuitter);
 
 
 
@@ -137,78 +137,9 @@ public class Home extends Page {
             }
         });
 
-        // Touch Listeners pour bien mettre en évidence quand on appuie sur un bouton //
-        boutonJouer.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch(event.getAction()) {
-                    // Pressed
-                    case MotionEvent.ACTION_DOWN :
-                        boutonJouer.getBackground().setAlpha(160);
-                        return true;
 
-                    // Released
-                    case MotionEvent.ACTION_UP :
-                        boutonJouer.getBackground().setAlpha(255);
-                        return true;
-                }
-                return false;
-            }
-        });
 
-        boutonCredits.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch(event.getAction()) {
-                    // Pressed
-                    case MotionEvent.ACTION_DOWN :
-                        boutonCredits.getBackground().setAlpha(160);
-                        return true;
 
-                    // Released
-                    case MotionEvent.ACTION_UP :
-                        boutonCredits.getBackground().setAlpha(255);
-                        return true;
-                }
-                return false;
-            }
-        });
-
-        boutonRegles.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch(event.getAction()) {
-                    // Pressed
-                    case MotionEvent.ACTION_DOWN :
-                        boutonRegles.getBackground().setAlpha(160);
-                        return true;
-
-                    // Released
-                    case MotionEvent.ACTION_UP :
-                        boutonRegles.getBackground().setAlpha(255);
-                        return true;
-                }
-                return false;
-            }
-        });
-
-        boutonQuitter.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch(event.getAction()) {
-                    // Pressed
-                    case MotionEvent.ACTION_DOWN :
-                        boutonQuitter.getBackground().setAlpha(160);
-                        return true;
-
-                    // Released
-                    case MotionEvent.ACTION_UP :
-                        boutonQuitter.getBackground().setAlpha(255);
-                        return true;
-                }
-                return false;
-            }
-        });
 
 
 

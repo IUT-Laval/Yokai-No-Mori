@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:state_pressed="true" >
+    <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+        android:src="@drawable/medium_wood_button"
+        android:tileMode="repeat"
+        android:dither="true"
+        android:alpha="0.7"/>
+</item>
+
+<item >
+    <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+        android:src="@drawable/medium_wood_button"
+        android:tileMode="repeat"
+        android:dither="true"
+        />
+</item>
+</selector>
