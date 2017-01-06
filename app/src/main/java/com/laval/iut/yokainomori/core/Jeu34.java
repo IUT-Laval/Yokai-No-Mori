@@ -45,6 +45,7 @@ public class Jeu34 extends Jeu {
 
 		setPlateau(new Plateau(3, 4));
 		Case cases[][] = getPlateau().getCases();
+
 		getGestionnaireJoueur().getJoueur(0).getZonePromotion().add(cases[0][3]);
 		getGestionnaireJoueur().getJoueur(0).getZonePromotion().add(cases[1][3]);
 		getGestionnaireJoueur().getJoueur(0).getZonePromotion().add(cases[2][3]);
@@ -106,6 +107,8 @@ public class Jeu34 extends Jeu {
 		// mise en place des piece importante (d�faite si captur�e ou autre)
 		pionKoropokkuru1.setImportant(true);
 		pionKoropokkuru2.setImportant(true);
+
+		getGestionnairePion().clear();
 
 		getGestionnairePion().put(getPlateau().getCases()[1][0], pionKoropokkuru1); // Koropokkuru
 		getGestionnairePion().put(getPlateau().getCases()[0][0], pionKitsune1); // kitsune

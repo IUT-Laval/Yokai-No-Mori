@@ -46,27 +46,27 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        pageActuel = PageName.GAME;
+        pageActuel = PageName.HOME;
         changePage(pageActuel);
 
     }
 
     public void changePage(PageName pageName) {
+
         if (pages.containsKey(pageName)) {
-            if (pageActuel != PageName.SETTINGS) {
+            tx = getSupportFragmentManager().beginTransaction();
+            tx.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left);
+            // mise en place de l'anim
                 previousPage = pageActuel;
                 pageActuel = pageName;
-                tx = getSupportFragmentManager().beginTransaction();
+
+
                 tx.replace(R.id.fragment, pages.get(pageName));
                 tx.commit();
-            } else {
-                pageActuel = previousPage;
-                previousPage = PageName.SETTINGS;
-                tx = getSupportFragmentManager().beginTransaction();
-                tx.replace(R.id.fragment, pages.get(pageActuel));
-                tx.commit();
-            }
         }
     }
 
+    public Game getGame() {
+        return game;
+    }
 }

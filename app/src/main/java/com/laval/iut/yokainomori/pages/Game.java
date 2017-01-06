@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu;
 import com.laval.iut.yokainomori.core.Jeu34;
+import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
 import com.laval.iut.yokainomori.core.JoueurListener;
@@ -42,7 +43,7 @@ public class Game extends Page {
 
     private ViewGroup root;
 
-    private Jeu jeu;
+    private Jeu jeu = new Jeu56();
 
     private Pion selectedPawn;
     private Integer indexSelectedPawn;
@@ -63,17 +64,19 @@ public class Game extends Page {
         return root;
     }
 
+
+
     public void init() {
 
         ((LinearLayout) root.findViewById(R.id.board)).removeAllViews();
         ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
         ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
 
-        jeu = new Jeu34();
+        jeu.initialiserJeu();
         lines = jeu.getPlateau().getHauteur();
         rows = jeu.getPlateau().getLargeur();
 
-
+        jeu.removeListeners();
         jeu.addJeuListeners(new JeuListener() {
             @Override
             public void init() {
@@ -231,14 +234,17 @@ public class Game extends Page {
         setCurrentPlayer(jeu.getGestionnaireJoueur().getJoueurActuel().getNom());
         // menu pause
         final DrawerLayout drawerLayout = (DrawerLayout) root.findViewById(R.id.drawer_layout);
-        NavigationView navigationViewJ1 = (NavigationView) root.findViewById(R.id.navigationViewJ1);
+        final NavigationView navigationViewJ1 = (NavigationView) root.findViewById(R.id.navigationViewJ1);
         navigationViewJ1.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
                             case R.id.quitter:
+
                                 changePage(PageName.HOME);
+                                drawerLayout.closeDrawer(navigationViewJ1);
+
                                 return true;
                             case R.id.recommencer:
                                 init();
@@ -255,6 +261,7 @@ public class Game extends Page {
                                 jeu.matchNul();
                                 displayDrawDialog();
                                 return true;
+
                         }
                         return false;
                     }
@@ -266,6 +273,7 @@ public class Game extends Page {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
                             case R.id.quitter:
+                                drawerLayout.closeDrawers();
                                 changePage(PageName.HOME);
                                 return true;
                             case R.id.recommencer:
@@ -486,4 +494,7 @@ public class Game extends Page {
         dialog.getWindow().setLayout((this.getView().getWidth()*3)/4,WindowManager.LayoutParams.WRAP_CONTENT);
     }
 
+    public void setJeu(Jeu jeu) {
+        this.jeu = jeu;
+    }
 }

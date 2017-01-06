@@ -24,11 +24,10 @@
             android:scaleType="fitCenter"
             android:padding="8dp"
             android:background="@drawable/custom_button"/>
-        <LinearLayout
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
-
+            android:layout_weight="1"></Space>
         <ImageButton
             android:id="@+id/replay_button2"
             android:layout_width="wrap_content"
@@ -38,10 +37,10 @@
             android:scaleType="fitCenter"
             android:padding="8dp"
             android:background="@drawable/custom_button"/>
-        <LinearLayout
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1"></Space>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -90,10 +89,10 @@
         android:layout_height="wrap_content"
         android:paddingBottom="8dp"
         android:paddingTop="8dp">
-        <LinearLayout
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1"></Space>
         <ImageButton
             android:id="@+id/home_button"
             android:layout_width="wrap_content"
@@ -103,10 +102,10 @@
             android:scaleType="fitCenter"
             android:padding="8dp"
             android:background="@drawable/custom_button"/>
-        <LinearLayout
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1"></Space>
 
         <ImageButton
             android:id="@+id/replay_button"
@@ -117,10 +116,10 @@
             android:scaleType="fitCenter"
             android:padding="8dp"
             android:background="@drawable/custom_button"/>
-        <LinearLayout
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_weight="1"></Space>
     </LinearLayout>
 
 </LinearLayout>

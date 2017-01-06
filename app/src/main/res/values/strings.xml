@@ -14,4 +14,8 @@
     <string name="resume">Reprendre</string>
     <string name="draw">Match nul !</string>
     <string name="declarer_nul">Déclarer match nul</string>
+    <string name="options_game_title">Options de jeu</string>
+    <string name="mode">Mode de jeu :</string>
+    <string name="cancel">Annuler</string>
+    <string name="launch">Lancer la partie</string>
 </resources>
