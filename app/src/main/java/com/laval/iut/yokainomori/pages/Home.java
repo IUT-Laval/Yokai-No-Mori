@@ -126,7 +126,7 @@ public class Home extends Page {
         boutonRegles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                changePage(PageName.RULES);
             }
         });
 

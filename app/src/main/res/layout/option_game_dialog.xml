@@ -64,10 +64,10 @@
                 android:paddingBottom="8dp"
                 android:paddingTop="8dp"
                 android:paddingRight="8dp">
-                <LinearLayout
+                <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"></LinearLayout>
+                    android:layout_weight="1"></Space>
                 <Button
                     android:id="@+id/cancel_button"
                     android:layout_width="wrap_content"

@@ -5,5 +5,5 @@ package com.laval.iut.yokainomori.pages;
  */
 
 public enum PageName {
-    HOME, GAME, SETTINGS, INFORMATIONS
+    HOME, GAME, RULES, CREDIT
 }

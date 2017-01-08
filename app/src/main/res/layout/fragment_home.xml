@@ -19,8 +19,8 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -71,7 +71,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -118,11 +118,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.083"/>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="0.33">
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -131,7 +135,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:layout_marginLeft="10dp"
                         android:background="@drawable/custom_menu_button"
                         android:id="@+id/boutonRegles"
                         android:text="@string/texte_bouton_regles"
@@ -145,12 +148,12 @@
                 <Space
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.8"/>
+                    android:layout_weight="0.167"/>
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_weight="1">
+                    android:layout_weight="0.33">
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -160,7 +163,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:layout_marginRight="10dp"
                         android:background="@drawable/custom_menu_button"
                         android:id="@+id/boutonCredits"
                         android:text="@string/texte_bouton_credits"
@@ -172,6 +174,10 @@
                         android:layout_height="0dp"
                         android:layout_weight="0.25"/>
                 </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.083"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -215,8 +221,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2">
+            android:layout_height="0dp"
+            android:layout_weight="0.8">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
