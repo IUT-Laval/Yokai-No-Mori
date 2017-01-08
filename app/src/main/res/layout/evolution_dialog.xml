@@ -56,7 +56,7 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/arrow"
+            android:src="@drawable/arrow_evolution"
             android:alpha="0.8" />
         <ImageView
             android:id="@+id/viewEvolution"

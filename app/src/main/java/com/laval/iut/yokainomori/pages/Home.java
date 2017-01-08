@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.PointerIcon;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -20,8 +21,12 @@ import com.laval.iut.yokainomori.MainActivity;
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu34;
 import com.laval.iut.yokainomori.core.Jeu56;
+import com.piotrek.customspinner.CustomSpinner;
+
+
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -63,16 +68,13 @@ public class Home extends Page {
                 dialog.dismiss();
             }
         });
-        final Spinner spinnerMode = (Spinner) dialog.findViewById(R.id.spinnerMode);
-        final List<String> modes= new ArrayList<String>();
+        final CustomSpinner spinnerMode = (CustomSpinner) dialog.findViewById(R.id.spinnerMode);
+        final String[] modes= new String[2];
         final String V34 = "version 3*4";
         final String V56 = "version 5*6";
-        modes.add(V34);
-        modes.add(V56);
-        // ajout des customs
-        ArrayAdapter<String> dataAdapterMode = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,modes);
-        dataAdapterMode.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerMode.setAdapter(dataAdapterMode);
+        modes[0] = V34;
+        modes[1] = V56;
+        spinnerMode.initializeStringValues(modes,"Mode de jeu");
         spinnerMode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

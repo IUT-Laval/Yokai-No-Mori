@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/dialogBackground"
-    android:alpha="0.9">
+    android:alpha="0.8">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,27 +35,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <LinearLayout
+            <com.piotrek.customspinner.CustomSpinner
+                android:id="@+id/spinnerMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-            <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="24dp"
-                        android:paddingRight="24dp"
-                        android:paddingBottom="24dp"
-                        android:textSize="15sp"
-                        android:text="@string/mode"
-                        android:alpha="0.8"
-                        android:textColor="#ffffff"/>
-            <Spinner
-                android:id="@+id/spinnerMode"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="8dp"
                 />
-        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
