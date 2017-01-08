@@ -140,7 +140,7 @@ public class Game extends Page {
 
         for (int i = lines - 1; i >= 0; i--) {
             LinearLayout tempLinearLayout = new LinearLayout(root.getContext());
-            LinearLayout.LayoutParams paramsTempLinearLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, .2f);
+            LinearLayout.LayoutParams paramsTempLinearLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, .2f);
             tempLinearLayout.setLayoutParams(paramsTempLinearLayout);
             tempLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
             for (int j = 0; j < rows; j++) {
@@ -156,6 +156,8 @@ public class Game extends Page {
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, .25f);
                 params.setMargins(10, 5, 10, 5);
                 caseBoard.setLayoutParams(params);
+                caseBoard.setAdjustViewBounds(true);
+                caseBoard.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 tempLinearLayout.addView(caseBoard);
                 boardPawns[j][i] = caseBoard;
                 final int iFinal = i;
@@ -490,7 +492,7 @@ public class Game extends Page {
         });
         if (gagnant == 1)
             ((LinearLayout)dialog.findViewById(R.id.dialog_layout)).setRotation(180);
-        dialog.getWindow().setLayout((this.getView().getWidth()*3)/4,WindowManager.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout((this.getView().getWidth()*4)/5,WindowManager.LayoutParams.WRAP_CONTENT);
     }
     public void displayDrawDialog(){
         final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
@@ -527,10 +529,31 @@ public class Game extends Page {
                 dialog.dismiss();
             }
         });
-        dialog.getWindow().setLayout((this.getView().getWidth()*3)/4,WindowManager.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout((this.getView().getWidth()*4)/5,WindowManager.LayoutParams.WRAP_CONTENT);
     }
     public void setJeu(Jeu jeu) {
         this.jeu = jeu;
+    }
+    public void displayExitDialog(){
+        final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
+                .setView(getActivity().getLayoutInflater().inflate(R.layout.exit_dialog, null))
+                .setCancelable(false)
+                .show();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#96000000")));
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog);
+        ((Button)(dialog.findViewById(R.id.yes_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changePage(PageName.HOME);
+                dialog.dismiss();
+            }
+        });
+        ((Button)(dialog.findViewById(R.id.no_button))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
     }
 
 }

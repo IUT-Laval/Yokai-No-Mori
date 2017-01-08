@@ -97,9 +97,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:background="@drawable/custom_menu_button"
+                        android:background="@drawable/custom_menu_button_texture"
                         android:id="@+id/boutonJouer"
                         android:text="@string/texte_bouton_jouer"
+                        android:textColor="@color/button_txt_color"
                         android:textSize="20sp"
                         android:textAllCaps="true"/>
 
@@ -135,10 +136,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:background="@drawable/custom_menu_button"
+                        android:background="@drawable/custom_menu_button_texture"
                         android:id="@+id/boutonRegles"
                         android:text="@string/texte_bouton_regles"
                         android:textSize="20sp"
+                        android:textColor="@color/button_txt_color"
                         android:textAllCaps="true"/>
                     <Space
                         android:layout_width="match_parent"
@@ -163,8 +165,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:background="@drawable/custom_menu_button"
+                        android:background="@drawable/custom_menu_button_texture"
                         android:id="@+id/boutonCredits"
+                        android:textColor="@color/button_txt_color"
                         android:text="@string/texte_bouton_credits"
                         android:textSize="20sp"
                         android:textAllCaps="true"/>
@@ -201,7 +204,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.70"
-                        android:background="@drawable/custom_menu_button"
+                        android:background="@drawable/custom_menu_button_texture"
+                        android:textColor="@color/button_txt_color"
                         android:id="@+id/boutonQuitter"
                         android:text="@string/texte_bouton_quitter"
                         android:textSize="20sp"

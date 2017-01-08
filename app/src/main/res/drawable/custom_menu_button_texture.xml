@@ -9,10 +9,9 @@
 </item>
 
 <item >
-    <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-        android:src="@drawable/medium_wood_button"
-        android:tileMode="repeat"
-        android:dither="true"
-        />
+        <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+            android:src="@drawable/medium_wood_button"
+            android:tileMode="repeat"
+            android:dither="true" />
 </item>
 </selector>

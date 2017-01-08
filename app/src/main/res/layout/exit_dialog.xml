@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="32sp"
-            android:src="@drawable/win"
+            android:src="@drawable/exit"
             android:adjustViewBounds="true"
             android:alpha="0.8"/>
         <TextView
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
-            android:text="@string/win"
+            android:text="@string/exit"
             android:textStyle="bold"
             android:alpha="0.85"/>
 
@@ -31,39 +31,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
         android:paddingBottom="8dp"
-        android:paddingTop="8dp">
-        <LinearLayout
+        android:paddingTop="8dp"
+        android:paddingRight="8dp">
+        <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
-        <ImageButton
-            android:id="@+id/home_button"
+            android:layout_weight="1"></Space>
+        <Button
+            android:id="@+id/no_button"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:src="@drawable/home"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="8dp"
-            android:background="@drawable/custom_button"/>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
-
-        <ImageButton
-            android:id="@+id/replay_button"
+            android:layout_height="36dp"
+            android:minWidth="64dp"
+            android:text="@string/no"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:background="@drawable/custom_button"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="8dp"/>
+        <Button
+            android:id="@+id/yes_button"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:src="@drawable/replay"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="8dp"
-            android:background="@drawable/custom_button"/>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
+            android:layout_height="36dp"
+            android:minWidth="64dp"
+            android:text="@string/yes"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:background="@drawable/custom_button"
+            android:textColor="#FFFFFF"/>
     </LinearLayout>
 
 </LinearLayout>

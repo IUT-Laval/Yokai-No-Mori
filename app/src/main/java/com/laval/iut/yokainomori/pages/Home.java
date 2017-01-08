@@ -133,10 +133,9 @@ public class Home extends Page {
         boutonQuitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                changePage(null);
             }
         });
-
 
 
 

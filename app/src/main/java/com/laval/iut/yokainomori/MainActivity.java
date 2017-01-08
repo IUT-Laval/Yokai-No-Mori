@@ -97,13 +97,17 @@ public class MainActivity extends AppCompatActivity {
 
             tx.replace(R.id.fragment, pages.get(pageName)).commit();
         }
-
-
+        else
+            finish();
     }
     @Override
     public void onBackPressed(){
-
-        super.onBackPressed();
+        if (pageActuel.equals(PageName.GAME))
+            game.displayExitDialog();
+        else if (!pageActuel.equals(PageName.HOME))
+            changePage(PageName.HOME);
+        else
+            super.onBackPressed();
     }
 
     public Game getGame() {

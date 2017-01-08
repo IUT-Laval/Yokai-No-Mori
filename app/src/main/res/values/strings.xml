@@ -23,4 +23,5 @@
     <string name="texte_bouton_regles">Règles</string>
     <string name="texte_bouton_quitter">Quitter</string>
     <string name="back">Retour</string>
+    <string name="exit">Êtes-vous sûr de vouloir quitter ?</string>
 </resources>
