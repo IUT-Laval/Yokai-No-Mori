@@ -12,12 +12,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/grass_texture">
-        <RelativeLayout
-            android:id="@+id/river"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:background="@drawable/water_texture">
-        </RelativeLayout>
+            android:layout_height="match_parent">
+            <Space
+                android:orientation="horizontal"
+                android:layout_weight="0.3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/river"
+                android:layout_weight="0.3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/water_texture">
+            </LinearLayout>
+            <Space
+                android:orientation="horizontal"
+                android:layout_weight="0.3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -123,14 +140,14 @@
                         android:orientation="horizontal">
 
                     </LinearLayout>
-                    <ImageView
-                        android:id="@+id/reserve2_right"
-                        android:src="@drawable/arrow_reserve"
-                        android:layout_weight="0.10"
-                        android:layout_width="0dp"
-                        android:scaleType="fitCenter"
-                        android:layout_height="match_parent" />
                 </HorizontalScrollView>
+                <ImageView
+                    android:id="@+id/reserve2_right"
+                    android:src="@drawable/arrow_reserve"
+                    android:layout_weight="0.10"
+                    android:layout_width="0dp"
+                    android:scaleType="fitCenter"
+                    android:layout_height="match_parent" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>
