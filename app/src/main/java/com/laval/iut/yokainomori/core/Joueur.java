@@ -43,5 +43,4 @@ public class Joueur {
 		return this.nom;
 	}
 
-
 }

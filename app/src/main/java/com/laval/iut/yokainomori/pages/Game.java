@@ -66,8 +66,8 @@ public class Game extends Page {
     public void init() {
 
         ((LinearLayout) root.findViewById(R.id.board)).removeAllViews();
-        //((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
-        //((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
+        ((LinearLayout) root.findViewById(R.id.reserve1)).removeAllViews();
+        ((LinearLayout) root.findViewById(R.id.reserve2)).removeAllViews();
 
         jeu = new Jeu34();
         lines = jeu.getPlateau().getHauteur();
