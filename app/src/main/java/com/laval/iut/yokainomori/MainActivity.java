@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        typeFace = Typeface.createFromAsset(getAssets(), "font/Manga.otf");
+        typeFace = Typeface.createFromAsset(getAssets(), "font/Moyko.ttf");
 
         home = new Home();
         game = new Game();
