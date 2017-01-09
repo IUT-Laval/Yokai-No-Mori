@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.laval.iut.yokainomori.R;
-import com.laval.iut.yokainomori.core.Case;
+import com.laval.iut.yokainomori.core.plateau.Case;
 import com.laval.iut.yokainomori.core.Jeu;
 import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
