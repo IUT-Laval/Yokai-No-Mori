@@ -1,5 +1,13 @@
 package com.laval.iut.yokainomori.core;
 
+import com.laval.iut.yokainomori.core.joueur.GestionnaireJoueurs;
+import com.laval.iut.yokainomori.core.joueur.Joueur;
+import com.laval.iut.yokainomori.core.pion.Deplacement;
+import com.laval.iut.yokainomori.core.pion.Pion;
+import com.laval.iut.yokainomori.core.pion.PionEvoluable;
+import com.laval.iut.yokainomori.core.plateau.Case;
+import com.laval.iut.yokainomori.core.plateau.Plateau;
+
 import org.apache.commons.collections4.BidiMap;
 import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 

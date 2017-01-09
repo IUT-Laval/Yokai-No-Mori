@@ -1,5 +1,5 @@
 
-package com.laval.iut.yokainomori.core;
+package com.laval.iut.yokainomori.core.pion;
 
 
 import java.util.List;

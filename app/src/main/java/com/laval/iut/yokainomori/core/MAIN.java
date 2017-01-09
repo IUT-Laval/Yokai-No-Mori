@@ -1,5 +1,8 @@
 package com.laval.iut.yokainomori.core;
 
+import com.laval.iut.yokainomori.core.joueur.Joueur;
+import com.laval.iut.yokainomori.core.pion.Pion;
+
 import java.util.Scanner;
 
 public class MAIN {

@@ -9,7 +9,6 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.widget.DrawerLayout;
 import android.view.DragEvent;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -24,13 +23,12 @@ import android.widget.LinearLayout;
 
 import com.laval.iut.yokainomori.R;
 import com.laval.iut.yokainomori.core.Jeu;
-import com.laval.iut.yokainomori.core.Jeu34;
 import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
-import com.laval.iut.yokainomori.core.Joueur;
-import com.laval.iut.yokainomori.core.JoueurListener;
-import com.laval.iut.yokainomori.core.Pion;
-import com.laval.iut.yokainomori.core.PionEvoluable;
+import com.laval.iut.yokainomori.core.joueur.Joueur;
+import com.laval.iut.yokainomori.core.joueur.JoueurListener;
+import com.laval.iut.yokainomori.core.pion.Pion;
+import com.laval.iut.yokainomori.core.pion.PionEvoluable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,6 +97,7 @@ public class Game extends Page {
 
             @Override
             public void finPartie(int gagnant) {
+
                 displayWinDialog(gagnant);
             }
 
@@ -244,7 +243,7 @@ public class Game extends Page {
                         switch (menuItem.getItemId()) {
                             case R.id.quitter:
 
-                                changePage(PageName.HOME);
+                                displayExitDialog();
                                 drawerLayout.closeDrawer(navigationViewJ1);
 
                                 return true;
@@ -407,7 +406,8 @@ public class Game extends Page {
     }
 
     public void displayEvolutionDialog(final PionEvoluable pion) {
-
+        if (jeu.isTermine())
+            return;
         final AlertDialog dialog = new AlertDialog.Builder(root.getContext())
                 .setView(getActivity().getLayoutInflater().inflate(R.layout.evolution_dialog, null))
                 .setCancelable(false)

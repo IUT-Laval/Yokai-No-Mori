@@ -1,4 +1,5 @@
-package com.laval.iut.yokainomori.core;
+package com.laval.iut.yokainomori.core.plateau;
+
 
 public class Plateau {
 

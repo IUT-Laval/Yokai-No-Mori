@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         break;
                 }
+                tx.remove(pages.get(pageActuel));
             } else {
                 switch (pageName) {
                     case CREDIT:

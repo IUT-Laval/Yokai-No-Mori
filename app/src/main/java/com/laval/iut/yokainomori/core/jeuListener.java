@@ -1,5 +1,8 @@
 package com.laval.iut.yokainomori.core;
 
+import com.laval.iut.yokainomori.core.pion.Pion;
+import com.laval.iut.yokainomori.core.pion.PionEvoluable;
+
 /**
  * Created by lione on 10/12/2016.
  */

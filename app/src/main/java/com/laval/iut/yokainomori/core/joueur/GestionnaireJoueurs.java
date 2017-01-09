@@ -1,4 +1,4 @@
-package com.laval.iut.yokainomori.core;
+package com.laval.iut.yokainomori.core.joueur;
 
 
 import java.util.ArrayList;

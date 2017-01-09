@@ -1,4 +1,7 @@
-package com.laval.iut.yokainomori.core;
+package com.laval.iut.yokainomori.core.joueur;
+
+import com.laval.iut.yokainomori.core.plateau.Case;
+import com.laval.iut.yokainomori.core.pion.Pion;
 
 import java.util.ArrayList;
 import java.util.List;

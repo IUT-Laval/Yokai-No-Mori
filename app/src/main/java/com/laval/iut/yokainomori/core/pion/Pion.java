@@ -1,4 +1,4 @@
-package com.laval.iut.yokainomori.core;
+package com.laval.iut.yokainomori.core.pion;
 
 import com.laval.iut.yokainomori.R;
 
@@ -96,5 +96,5 @@ public class Pion {
 		return result;
 	}
 
-	
+
 }

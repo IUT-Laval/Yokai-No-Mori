@@ -1,4 +1,5 @@
-package com.laval.iut.yokainomori.core;
+package com.laval.iut.yokainomori.core.joueur;
+
 
 /**
  * Created by lione on 11/12/2016.

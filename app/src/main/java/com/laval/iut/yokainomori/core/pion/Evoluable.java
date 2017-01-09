@@ -1,4 +1,4 @@
-package com.laval.iut.yokainomori.core;
+package com.laval.iut.yokainomori.core.pion;
 
 /**
  * Created by Nicolas on 28/09/2016.
