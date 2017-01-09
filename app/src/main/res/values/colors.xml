@@ -9,9 +9,12 @@
 
     <color name="button_txt_color">#FFFFFF</color>
 
-
     <color name="win">#2c3e50</color>
     <color name="textWin">#8f9599</color>
 
     <color name="dialogBackground">#424242</color>
+
+    <color name="boardPromote">#f1c40f</color>
+    <color name="boardRed">#e74c3c</color>
+    <color name="boardBlue">#3498db</color>
 </resources>
