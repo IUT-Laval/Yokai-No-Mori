@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/grass_texture">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Space
+                android:orientation="horizontal"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/river"
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/water_texture">
+            </LinearLayout>
+            <Space
+                android:orientation="horizontal"
+                android:layout_weight="0.3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/wood_texture">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/button_txt_color"
+                        android:text="L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao."
+                        />
+                </LinearLayout>
+            </ScrollView>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"/>
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

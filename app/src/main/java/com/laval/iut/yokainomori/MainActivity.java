@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
+import com.laval.iut.yokainomori.pages.Credits;
 import com.laval.iut.yokainomori.pages.Game;
 import com.laval.iut.yokainomori.pages.Home;
 import com.laval.iut.yokainomori.pages.Page;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Home home;
     private Game game;
     private Rules rules;
+    private Credits credits;
 
     private Map<PageName, Page> pages;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         home = new Home();
         game = new Game();
         rules = new Rules();
+
 
 
 
