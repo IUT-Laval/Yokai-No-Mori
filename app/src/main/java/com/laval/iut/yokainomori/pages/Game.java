@@ -4,12 +4,12 @@ import android.app.AlertDialog;
 import android.content.ClipData;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.widget.DrawerLayout;
 import android.view.DragEvent;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -23,8 +23,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.laval.iut.yokainomori.R;
+import com.laval.iut.yokainomori.core.Case;
 import com.laval.iut.yokainomori.core.Jeu;
-import com.laval.iut.yokainomori.core.Jeu34;
 import com.laval.iut.yokainomori.core.Jeu56;
 import com.laval.iut.yokainomori.core.JeuListener;
 import com.laval.iut.yokainomori.core.Joueur;
@@ -142,8 +142,11 @@ public class Game extends Page {
             LinearLayout tempLinearLayout = new LinearLayout(root.getContext());
             LinearLayout.LayoutParams paramsTempLinearLayout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, .2f);
             tempLinearLayout.setLayoutParams(paramsTempLinearLayout);
+
+            tempLinearLayout.setLayoutParams(paramsTempLinearLayout);
             tempLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
             for (int j = 0; j < rows; j++) {
+
                 final ImageView caseBoard = new ImageView(root.getContext());
                 if (jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[j][i]) != null) {
                     caseBoard.setImageResource(jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[j][i]).getImg());
@@ -151,8 +154,20 @@ public class Game extends Page {
                         caseBoard.setRotation(180);
                     else
                         caseBoard.setRotation(0);
-                } else
+                } else {
                     caseBoard.setImageResource(R.drawable.empty);
+                }
+
+                int color = getResources().getColor(R.color.boardRed);
+                if ((j%2 == 0 && i%2 == 0) || (j%2 == 1 && i%2 == 1))
+                    color = getResources().getColor(R.color.boardBlue);
+                for (int k = 0;k<2;k++)
+                    for (Case c : jeu.getGestionnaireJoueur().getJoueur(k).getZonePromotion())
+                        if (c.getY() == i && c.getX() == j)
+                            color = getResources().getColor(R.color.boardPromote);
+                caseBoard.setBackgroundColor(color);
+                caseBoard.getBackground().setAlpha(60);
+
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, .25f);
                 params.setMargins(10, 5, 10, 5);
                 caseBoard.setLayoutParams(params);

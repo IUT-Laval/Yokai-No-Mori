@@ -129,23 +129,23 @@ public class Jeu56 extends Jeu {
 			pionKoropokkuru1.setImportant(true);
 			pionKoropokkuru2.setImportant(true);
 
-			getGestionnairePion().put(getPlateau().getCases()[2][0], pionKoropokkuru1); 
+			getGestionnairePion().put(getPlateau().getCases()[2][0], pionKoropokkuru1);
 			getGestionnairePion().put(getPlateau().getCases()[0][0], pionOni1); 
 			getGestionnairePion().put(getPlateau().getCases()[1][0], pionKirin1); 
 			getGestionnairePion().put(getPlateau().getCases()[3][0], pionKirin2);
 			getGestionnairePion().put(getPlateau().getCases()[4][0], pionOni2); 
 			getGestionnairePion().put(getPlateau().getCases()[1][2], pionKodama1); 
 			getGestionnairePion().put(getPlateau().getCases()[2][2], pionKodama2); 
-			getGestionnairePion().put(getPlateau().getCases()[3][2], pionKodama3); 
+			getGestionnairePion().put(getPlateau().getCases()[3][2], pionKodama3);
 
-			getGestionnairePion().put(getPlateau().getCases()[2][5], pionKoropokkuru2); 
+			getGestionnairePion().put(getPlateau().getCases()[2][5], pionKoropokkuru2);
 			getGestionnairePion().put(getPlateau().getCases()[0][5], pionOni3); 
 			getGestionnairePion().put(getPlateau().getCases()[1][5], pionKirin3); 
 			getGestionnairePion().put(getPlateau().getCases()[3][5], pionKirin4);
 			getGestionnairePion().put(getPlateau().getCases()[4][5], pionOni4); 
 			getGestionnairePion().put(getPlateau().getCases()[1][3], pionKodama4); 
 			getGestionnairePion().put(getPlateau().getCases()[2][3], pionKodama5); 
-			getGestionnairePion().put(getPlateau().getCases()[3][3], pionKodama6); 
+			getGestionnairePion().put(getPlateau().getCases()[3][3], pionKodama6);
 
 			List<Pion> pionsJ1 = getGestionnaireJoueur().getJoueur(0).getPions();
 			List<Pion> pionsJ2 = getGestionnaireJoueur().getJoueur(1).getPions();
