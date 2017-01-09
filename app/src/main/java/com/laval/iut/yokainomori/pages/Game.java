@@ -254,9 +254,6 @@ public class Game extends Page {
                             case R.id.reprendre:
                                 drawerLayout.closeDrawers();
                                 return true;
-                            case R.id.options:
-                                //changePage(PageName.);
-                                return true;
                             case R.id.match_nul:
                                 drawerLayout.closeDrawers();
                                 jeu.matchNul();
@@ -283,9 +280,6 @@ public class Game extends Page {
                                 return true;
                             case R.id.reprendre:
                                 drawerLayout.closeDrawers();
-                                return true;
-                            case R.id.options:
-                                //changePage(PageName.);
                                 return true;
                             case R.id.match_nul:
                                 drawerLayout.closeDrawers();

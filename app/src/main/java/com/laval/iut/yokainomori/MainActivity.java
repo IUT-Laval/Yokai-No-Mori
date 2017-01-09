@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         home = new Home();
         game = new Game();
         rules = new Rules();
+        credits = new Credits();
 
 
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         pages.put(PageName.HOME, home);
         pages.put(PageName.GAME, game);
         pages.put(PageName.RULES, rules);
+        pages.put(PageName.CREDIT, credits);
 
         for(Map.Entry<PageName, Page> p : pages.entrySet()) {
             p.getValue().addPageListeners(new PageListener() {
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             if (!pageActuel.equals(PageName.HOME)) {
                 switch (pageActuel) {
                     case CREDIT:
-                        tx.setCustomAnimations(R.anim.slide_in_bot, R.anim.slide_out_bot);
+                        tx.setCustomAnimations(R.anim.slide_in_top, R.anim.slide_out_top);
                         break;
                     case GAME:
                         tx.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_right);
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 switch (pageName) {
                     case CREDIT:
-                        tx.setCustomAnimations(R.anim.slide_in_top, R.anim.slide_out_top);
+                        tx.setCustomAnimations(R.anim.slide_in_bot, R.anim.slide_out_bot);
                         break;
                     case GAME:
                         tx.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left);

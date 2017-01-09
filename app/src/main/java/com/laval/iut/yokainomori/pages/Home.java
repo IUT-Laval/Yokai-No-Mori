@@ -121,7 +121,7 @@ public class Home extends Page {
         boutonCredits.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                changePage(PageName.CREDIT);
             }
         });
 

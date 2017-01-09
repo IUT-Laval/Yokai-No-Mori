@@ -8,58 +8,103 @@
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/grass_texture">
+        android:background="@drawable/water_texture">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <Space
-                android:orientation="horizontal"
-                android:layout_weight="0.3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"/>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:id="@+id/river"
-                android:layout_weight="0.4"
+            <ImageView
+                android:layout_weight="0.27"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/water_texture">
-            </LinearLayout>
+                android:background="@drawable/grass_texture"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bord_gauche_herbe_texture"/>
             <Space
-                android:orientation="horizontal"
-                android:layout_weight="0.3"
+                android:layout_weight="0.33"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent">
+            </Space>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bord_droite_herbe_texture"/>
+            <ImageView
+                android:layout_weight="0.27"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/grass_texture"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <Space
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.2"/>
+                android:layout_weight="0.2"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:minWidth="64dp"
+                    android:text="@string/back"
+                    android:paddingRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/custom_menu_button_texture"
+                    android:textColor="@color/button_txt_color"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bord_haut_texture"/>
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:fillViewport="true">
+                android:fillViewport="true"
+                android:background="@drawable/wood_texture"
+                android:padding="10dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/wood_texture">
-                    <EditText
+                    android:layout_height="wrap_content"
+                    android:alpha="0.9"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:background="@drawable/custom_button">
+                    <TextView
+                        android:id="@+id/title_credits"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/texte_bouton_credits"
+                        android:textColor="@color/button_txt_color"
+                        android:textSize="30sp"
+                        android:textAllCaps="true"
+                        android:gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/text_credits"
                         android:layout_width="match_parent"
                         android:layout_gravity="center_vertical"
+                        android:textSize="16sp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/button_txt_color"
-                        android:text="L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.L'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semetre 3 DUT Informatique de l'IUT de Laval.\nLe jeu s'inspire du jeu de plateau appelé YokaiNoMori.\n Ce jeu étant inspiré du Shogi qui est une variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao."
-                        />
+                        android:text="@string/text_credits"   />                     />
                 </LinearLayout>
             </ScrollView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bord_bas_texture"/>
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
