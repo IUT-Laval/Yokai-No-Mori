@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import com.laval.iut.yokainomori.MainActivity;
 import com.laval.iut.yokainomori.R;
 import com.ortiz.touch.ExtendedViewPager;
 import com.ortiz.touch.TouchImageView;
@@ -56,6 +57,7 @@ public class Rules extends Page {
                 changePage(PageName.HOME);
             }
         });
+        ((Button)root.findViewById(R.id.back_button)).setTypeface(((MainActivity)getActivity()).getTypeFace());
     }
     static class TouchImageAdapter extends PagerAdapter {
 

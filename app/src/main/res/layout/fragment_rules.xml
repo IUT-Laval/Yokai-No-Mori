@@ -60,13 +60,14 @@
         <Button
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
+            android:textSize="20sp"
             android:layout_height="36dp"
             android:minWidth="64dp"
             android:text="@string/back"
             android:paddingRight="8dp"
             android:paddingLeft="8dp"
             android:background="@drawable/custom_menu_button_texture"
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/button_txt_color"/>
         </LinearLayout>
         <ImageView
             android:layout_width="wrap_content"

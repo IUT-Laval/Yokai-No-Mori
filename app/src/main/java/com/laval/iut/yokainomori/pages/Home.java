@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.Px;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.PointerIcon;
@@ -108,6 +109,10 @@ public class Home extends Page {
         boutonRegles = (Button) root.findViewById(R.id.boutonRegles);
         boutonQuitter = (Button) root.findViewById(R.id.boutonQuitter);
 
+        boutonCredits.setTypeface(((MainActivity)getActivity()).getTypeFace());
+        boutonJouer.setTypeface(((MainActivity)getActivity()).getTypeFace());
+        boutonRegles.setTypeface(((MainActivity)getActivity()).getTypeFace());
+        boutonQuitter.setTypeface(((MainActivity)getActivity()).getTypeFace());
 
 
         // Listeners pour ouvrir les pages

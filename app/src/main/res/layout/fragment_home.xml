@@ -125,7 +125,7 @@
                         android:id="@+id/boutonJouer"
                         android:text="@string/texte_bouton_jouer"
                         android:textColor="@color/button_txt_color"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textAllCaps="true"/>
 
                     <Space
@@ -163,7 +163,7 @@
                         android:background="@drawable/custom_menu_button_texture"
                         android:id="@+id/boutonRegles"
                         android:text="@string/texte_bouton_regles"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textColor="@color/button_txt_color"
                         android:textAllCaps="true"/>
                     <Space
@@ -193,7 +193,7 @@
                         android:id="@+id/boutonCredits"
                         android:textColor="@color/button_txt_color"
                         android:text="@string/texte_bouton_credits"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textAllCaps="true"/>
 
                     <Space
@@ -232,7 +232,7 @@
                         android:textColor="@color/button_txt_color"
                         android:id="@+id/boutonQuitter"
                         android:text="@string/texte_bouton_quitter"
-                        android:textSize="20sp"
+                        android:textSize="25sp"
                         android:textAllCaps="true"/>
                     <Space
                         android:layout_width="match_parent"

@@ -1,5 +1,6 @@
 package com.laval.iut.yokainomori;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -25,14 +26,20 @@ public class MainActivity extends AppCompatActivity {
     private Rules rules;
     private Credits credits;
 
+    private Typeface typeFace;
+
     private Map<PageName, Page> pages;
 
     private PageName pageActuel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        typeFace = Typeface.createFromAsset(getAssets(), "font/Manga.otf");
 
         home = new Home();
         game = new Game();
@@ -118,5 +125,9 @@ public class MainActivity extends AppCompatActivity {
 
     public Game getGame() {
         return game;
+    }
+
+    public Typeface getTypeFace() {
+        return typeFace;
     }
 }

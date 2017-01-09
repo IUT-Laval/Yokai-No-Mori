@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.laval.iut.yokainomori.MainActivity;
 import com.laval.iut.yokainomori.R;
 
 /**
@@ -31,6 +33,11 @@ public class Credits extends Page {
                 changePage(PageName.HOME);
             }
         });
+        ((TextView)root.findViewById(R.id.text_credits1)).setTypeface(((MainActivity)getActivity()).getTypeFace());
+        ((TextView)root.findViewById(R.id.text_credits2)).setTypeface(((MainActivity)getActivity()).getTypeFace());
+        ((TextView)root.findViewById(R.id.text_credits3)).setTypeface(((MainActivity)getActivity()).getTypeFace());
+        ((TextView)root.findViewById(R.id.title_credits)).setTypeface(((MainActivity)getActivity()).getTypeFace());
+        ((Button)root.findViewById(R.id.back_button)).setTypeface(((MainActivity)getActivity()).getTypeFace());
     }
 
 }
