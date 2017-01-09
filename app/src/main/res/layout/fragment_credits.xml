@@ -69,7 +69,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:fillViewport="true"
                 android:background="@drawable/wood_texture"
                 android:padding="10dp">
 
@@ -92,13 +91,77 @@
                         android:layout_marginBottom="20dp"
                         android:textStyle="bold"/>
                     <TextView
-                        android:id="@+id/text_credits"
+                        android:id="@+id/text_credits1"
                         android:layout_width="match_parent"
                         android:layout_gravity="center_vertical"
                         android:textSize="16sp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/button_txt_color"
-                        android:text="@string/text_credits"   />                     />
+                        android:text="@string/text_credits1"
+                        android:gravity="center"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/pion_nico"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:padding="5dp"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/pion_lionel"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:padding="5dp"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/pion_cam"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:padding="5dp"/>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/pion_riri"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/text_credits2"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/button_txt_color"
+                        android:text="@string/text_credits2"
+                        android:gravity="center"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/yin_yang"
+                        android:scaleType="fitCenter"/>
+                    <TextView
+                        android:id="@+id/text_credits3"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="16sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/button_txt_color"
+                        android:text="@string/text_credits3"
+                        android:gravity="center"/>
                 </LinearLayout>
             </ScrollView>
             <ImageView

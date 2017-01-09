@@ -24,5 +24,7 @@
     <string name="texte_bouton_quitter">Quitter</string>
     <string name="back">Retour</string>
     <string name="exit">Êtes-vous sûr de vouloir quitter ?</string>
-    <string name="text_credits">L\'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Camille Police, Lionel Jouin et Riwal Le Faou.\nCe jeu mobile a été crée dans le cadre du projet tuteuré du semestre 3 DUT Informatique de l\'IUT de Laval.\nLe jeu s\'inspire du jeu de plateau appelé YokaiNoMori.\nCe jeu étant inspiré du Shogi, variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.</string>
+    <string name="text_credits1">L\'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Camille Police, Lionel Jouin et Riwal Le Faou.</string>
+    <string name="text_credits2">Ce jeu mobile a été crée dans le cadre du projet tuteuré du semestre 3 DUT Informatique de l\'IUT de Laval.</string>
+    <string name="text_credits3">Le jeu s\'inspire du jeu de plateau appelé YokaiNoMori.\nCe jeu étant inspiré du Shogi, variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.</string>
 </resources>
