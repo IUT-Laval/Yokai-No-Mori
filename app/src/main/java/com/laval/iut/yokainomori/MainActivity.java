@@ -1,7 +1,6 @@
 package com.laval.iut.yokainomori;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
@@ -55,10 +54,23 @@ public class MainActivity extends AppCompatActivity {
         pageActuel = PageName.HOME;
         changePage(pageActuel);
 
+        Resources.getInstance(this);
+        Resources.getInstance().playBackgroundMusic(true);
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Resources.getInstance().playBackgroundMusic(true);
+        Resources.getInstance().setVolume();
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Resources.getInstance().playBackgroundMusic(false);
+    }
 
     public void changePage(PageName pageName) {
 

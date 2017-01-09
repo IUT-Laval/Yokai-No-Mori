@@ -78,7 +78,7 @@ public class Resources {
 
         public BackgroundMusic() {
             super();
-            //player = MediaPlayer.create(mainActivity.getApplicationContext(), R.raw.music);
+            player = MediaPlayer.create(mainActivity.getApplicationContext(), R.raw.music);
             player.setLooping(true);
             player.setVolume(0f, 0f);
         }
