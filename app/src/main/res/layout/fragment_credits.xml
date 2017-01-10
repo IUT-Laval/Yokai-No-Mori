@@ -150,9 +150,9 @@
                         android:gravity="center"/>
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="100dp"
                         android:padding="10dp"
-                        android:src="@drawable/yin_yang"
+                        android:src="@drawable/logo_iut_laval"
                         android:scaleType="fitCenter"/>
                     <TextView
                         android:id="@+id/text_credits3"
@@ -163,6 +163,12 @@
                         android:textColor="@color/button_txt_color"
                         android:text="@string/text_credits3"
                         android:gravity="center"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:src="@drawable/yin_yang"
+                        android:scaleType="fitCenter"/>
                 </LinearLayout>
             </ScrollView>
             <ImageView
