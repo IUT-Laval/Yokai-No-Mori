@@ -190,6 +190,7 @@ public class Game extends Page {
                                 //selectedX = jFinal;
                                 //selectedY = iFinal;
                                 selectedPawn = jeu.getGestionnairePion().get(jeu.getPlateau().getCases()[jFinal][iFinal]);
+                                removePawn(jFinal,iFinal);
                             }
                             return true;
                         } else {
@@ -234,10 +235,11 @@ public class Game extends Page {
                                         else
                                             removePawn(nomJoueur, indexSelectedPawn);
                                     }
+                                    else
+                                        setPawn(selectedPawn.getImg(),oldX,oldY,jeu.isRetourne(selectedPawn));
                                 }
                                 indexSelectedPawn = null;
                                 selectedPawn = null;
-                                //setPawn(iFinal, jFinal);
                                 break;
                             default:
                                 break;
