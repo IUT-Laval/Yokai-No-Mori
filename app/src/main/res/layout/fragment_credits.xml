@@ -117,7 +117,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:src="@drawable/pion_lionel"
+                            android:src="@drawable/pion_cam"
                             android:adjustViewBounds="true"
                             android:scaleType="fitCenter"
                             android:padding="5dp"/>
@@ -125,7 +125,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:src="@drawable/pion_cam"
+                            android:src="@drawable/pion_lionel"
                             android:adjustViewBounds="true"
                             android:scaleType="fitCenter"
                             android:padding="5dp"/>
@@ -162,6 +162,21 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/button_txt_color"
                         android:text="@string/text_credits3"
+                        android:gravity="center"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ferti"
+                        android:scaleType="fitCenter"/>
+                    <TextView
+                        android:id="@+id/text_credits4"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/button_txt_color"
+                        android:text="@string/text_credits4"
                         android:gravity="center"/>
                     <ImageView
                         android:layout_width="match_parent"

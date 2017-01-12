@@ -37,6 +37,7 @@ public class Credits extends Page {
         ((TextView)root.findViewById(R.id.text_credits2)).setTypeface(((MainActivity)getActivity()).getTypeFace());
         ((TextView)root.findViewById(R.id.text_credits3)).setTypeface(((MainActivity)getActivity()).getTypeFace());
         ((TextView)root.findViewById(R.id.title_credits)).setTypeface(((MainActivity)getActivity()).getTypeFace());
+        ((TextView)root.findViewById(R.id.text_credits4)).setTypeface(((MainActivity)getActivity()).getTypeFace());
         ((Button)root.findViewById(R.id.back_button)).setTypeface(((MainActivity)getActivity()).getTypeFace());
     }
 

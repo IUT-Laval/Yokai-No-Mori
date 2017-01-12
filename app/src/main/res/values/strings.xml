@@ -26,5 +26,6 @@
     <string name="exit">Êtes-vous sûr de vouloir quitter ?</string>
     <string name="text_credits1">L\'application mobile du YokaiNoMori a été crée par Nicolas Bourdin, Camille Police, Lionel Jouin et Riwal Le Faou.</string>
     <string name="text_credits2">Ce jeu mobile a été crée dans le cadre du projet tuteuré du troisième semestre DUT Informatique de l\'IUT de Laval.</string>
-    <string name="text_credits3">Le jeu s\'inspire du jeu de plateau appelé YokaiNoMori.\nCe jeu étant inspiré du Shogi, variante japonaise des échecs.\nLe créateur de ce jeu étant Madoka Kitao.</string>
+    <string name="text_credits3">Le jeu s\'inspire du jeu de plateau appelé YokaiNoMori.\nCe jeu inspiré du Shogi, variante japonaise des échecs, a été crée par Madoka Kitao. Le Yokaï no mori est distribué en France par l\'éditeur de jeu FERTI</string>
+    <string name="text_credits4">Les logos utilisés ont été recupérés sur flaticon.</string>
 </resources>
